@@ -1,8 +1,11 @@
-<%-- 
-    Document   : ouctome
-    Created on : 28 Apr 2023, 1:10:27 AM
-    Author     : Student
---%>
+<%
+    String question =(String)session.getAttribute("question");
+    Integer answer =(Integer)session.getAttribute("answer");
+    
+    String result =(String)request.getAttribute("result");
+    Integer userAnswer =(Integer)request.getAttribute("userAnswer");
+    
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -30,7 +33,7 @@
                 </tr>
                 <tr>
                     <td>Actual Answer</td>
-                    <td><%=Answer%></td>
+                    <td><%=answer%></td>
                 </tr>
                 <tr>
                     <td></td>
