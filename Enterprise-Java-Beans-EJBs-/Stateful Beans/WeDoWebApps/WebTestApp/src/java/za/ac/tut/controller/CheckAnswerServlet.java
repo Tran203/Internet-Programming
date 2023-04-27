@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.ejb.bl.WebTestSBLocal;
 import za.ac.tut.model.QuestionPaper;
 
 /**
@@ -31,20 +32,33 @@ public class CheckAnswerServlet extends HttpServlet {
         
         Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
         Integer  totQuestions = (Integer)session.getAttribute("totQuestions");
+        
         Integer  numCorrect = (Integer)session.getAttribute("numCorrect");
         Integer  numWrong = (Integer)session.getAttribute("numWrong");
+        
+        WebTestSBLocal record = (WebTestSBLocal)session.getAttribute("record");
+        
         Integer answer = (Integer)session.getAttribute("answer");
         
         //mark user
+        String result = "Wrong";
         if(userAnswer ==  answer){
             numCorrect++;
+            result = "Correct";
         }else{
             numWrong++;
         }
         
+        //record
+        record.recordUserAnswerAndResult(userAnswer, result);
+        
         //pass into session
         session.setAttribute("numCorrect", numCorrect);
         session.setAttribute("numWrong", numWrong);
+        session.setAttribute("record", record);
+        
+        request.setAttribute("userAnswer", userAnswer);
+        request.setAttribute("result", result);
         
         //navigation
         if(numQuestions == totQuestions){

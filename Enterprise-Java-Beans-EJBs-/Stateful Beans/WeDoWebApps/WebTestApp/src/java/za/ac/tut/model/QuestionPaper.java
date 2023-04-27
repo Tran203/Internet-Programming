@@ -43,6 +43,8 @@ public class QuestionPaper {
         WebTestSBLocal record = (WebTestSBLocal)session.getAttribute("record");
         record.recordQuestionAndAnswer(question, answer);
         
+        //pass into session
+        session.setAttribute("record", record);
         session.setAttribute("answer", answer);
         
         return question;
