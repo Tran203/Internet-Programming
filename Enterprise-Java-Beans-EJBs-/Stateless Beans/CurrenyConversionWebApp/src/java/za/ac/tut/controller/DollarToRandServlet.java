@@ -19,25 +19,24 @@ import za.ac.tut.ejb.bl.CurrencyConvertorSBLocal;
  *
  * @author Student
  */
-public class RandToDollarServlet extends HttpServlet {
-    //ejb
+public class DollarToRandServlet extends HttpServlet {//ejb
     @EJB
     private CurrencyConvertorSBLocal convert;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //get Data from user
-        Double rand = Double.parseDouble(request.getParameter("amt"));
+        Double dollar = Double.parseDouble(request.getParameter("amt"));
         
         //convert
-        Double dollar = convert.convertToDollar(rand);
+        Double rand = convert.convertToRand(dollar);
         
         //return data to user
         request.setAttribute("rand", rand);
         request.setAttribute("dollar", dollar);
         
         //Request Dispatcher
-        RequestDispatcher disp = request.getRequestDispatcher("dollar_outcome.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("rand_outcome.jsp");
         disp.forward(request, response);
     }
 }
