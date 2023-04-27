@@ -16,7 +16,7 @@
         <h1>Available Tickets</h1>
         <p>
             There are <b><%=availableTickets%></b> tickets available. <br><br>
-            Please click <a href="menu.jsp">here</a> to go to the menu page or <a href="index.jsp">here</a> to the main page
+            Please click <a href="menu.jsp">here</a> to go to the menu page or <a href="index.html">here</a> to the main page
         </p>
     </body>
 </html>

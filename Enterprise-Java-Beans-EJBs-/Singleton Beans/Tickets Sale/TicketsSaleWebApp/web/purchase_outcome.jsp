@@ -1,6 +1,6 @@
 
 <%
-   Integer numTickets = (Integer)request.getAttribute("numTicket");
+   Integer numTickets = (Integer)request.getAttribute("numTickets");
    Integer numTicketsIssued = (Integer)request.getAttribute("numTicketsIssued");
 %>
 
@@ -15,7 +15,7 @@
         <h1>Tickets Purchase Outcome</h1>
         <p>
             You requested <b><%=numTickets%></b> tickets, and <b><%=numTicketsIssued%></b> were issued to you.<br><br>
-            Please click <a href="menu.jsp">here</a> to go to the menu page or <a href="index.jsp">here</a> to the main page
+            Please click <a href="menu.jsp">here</a> to go to the menu page or <a href="index.html">here</a> to the main page
         </p>
     </body>
 </html>
