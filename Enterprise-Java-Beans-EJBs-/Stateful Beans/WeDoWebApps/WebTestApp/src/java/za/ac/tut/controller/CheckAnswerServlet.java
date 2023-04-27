@@ -27,19 +27,24 @@ public class CheckAnswerServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         //get user Data
-        String testOption = request.getParameter("testOption");
+        Integer userAnswer = Integer.parseInt(request.getParameter("userAnswer"));
+        
         Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
         Integer  totQuestions = (Integer)session.getAttribute("totQuestions");
+        Integer  numCorrect = (Integer)session.getAttribute("numCorrect");
+        Integer  numWrong = (Integer)session.getAttribute("numWrong");
+        Integer answer = (Integer)session.getAttribute("answer");
         
-        //call for help
-        QuestionPaper help = new QuestionPaper();
-        String question = help.getQuestion(session, testOption);
-        numQuestions++;
+        //mark user
+        if(userAnswer ==  answer){
+            numCorrect++;
+        }else{
+            numWrong++;
+        }
         
         //pass into session
-        session.setAttribute("testOption", testOption);
-        session.setAttribute(" numQuestions",numQuestions);
-        request.setAttribute("question", question);
+        session.setAttribute("numCorrect", numCorrect);
+        session.setAttribute("numWrong", numWrong);
         
         //navigation
         if(numQuestions == totQuestions){
