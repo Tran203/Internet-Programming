@@ -4,9 +4,25 @@
         <servlet-name>StartSessionServlet</servlet-name>
         <servlet-class>za.ac.tut.contoller.StartSessionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DepositServlet</servlet-name>
+        <servlet-class>za.ac.tut.contoller.DepositServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <servlet-class>za.ac.tut.contoller.WithdrawServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>StartSessionServlet</servlet-name>
         <url-pattern>/StartSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DepositServlet</servlet-name>
+        <url-pattern>/DepositServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WithdrawServlet</servlet-name>
+        <url-pattern>/WithdrawServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
