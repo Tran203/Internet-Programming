@@ -13,7 +13,7 @@
         <h1>Rand Outcome</h1>
         <p>
             <b>$<%=dollar%></b> is equivalent to <b>R<%=rand%></b><br>
-            Please click <a href="menu.jsp">here</a> to return to the menu page or <a href="index.jsp">here</a> to main page
+            Please click <a href="menu.jsp">here</a> to return to the menu page or <a href="index.html">here</a> to main page
         </p>
     </body>
 </html>
