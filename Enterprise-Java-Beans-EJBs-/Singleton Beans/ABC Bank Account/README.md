@@ -4,3 +4,5 @@
  - Check balance
  - Deposit cash and
  - Withdraw cash.
+
+  Assuming that the initial balance is R1000
