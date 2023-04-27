@@ -15,15 +15,15 @@ import javax.ejb.Local;
 @Local
 public interface WebTestSBLocal {
 
-    void recordQuestionAndAnswer(String question, String answer);
+    void recordQuestionAndAnswer(String question, Integer answer);
 
-    void recordUserAnswerAndResult(String userAnswer, String result);
+    void recordUserAnswerAndResult(Integer userAnswer, String result);
 
     List<String> getQuestions();
     
-    List<String> getAnswers();
+    List<Integer> getAnswers();
     
-    List<String> getUserAnswers();
+    List<Integer> getUserAnswers();
     
     List<String> getResults();
     

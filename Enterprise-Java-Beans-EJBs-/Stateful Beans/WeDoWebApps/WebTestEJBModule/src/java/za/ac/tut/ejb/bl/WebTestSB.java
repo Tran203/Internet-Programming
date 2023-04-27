@@ -17,18 +17,18 @@ import javax.ejb.Stateful;
 public class WebTestSB implements WebTestSBLocal {
     //Custom data
     private List<String> questions = new ArrayList();
-    private List<String> answers = new ArrayList();
-    private List<String> userAnswers = new ArrayList();
+    private List<Integer> answers = new ArrayList();
+    private List<Integer> userAnswers = new ArrayList();
     private List<String> results = new ArrayList();
 
     @Override
-    public void recordQuestionAndAnswer(String question, String answer) {
+    public void recordQuestionAndAnswer(String question, Integer answer) {
         questions.add(question);
         answers.add(answer);
     }
 
     @Override
-    public void recordUserAnswerAndResult(String userAnswer, String result) {
+    public void recordUserAnswerAndResult(Integer userAnswer, String result) {
         userAnswers.add(userAnswer);
         results.add(result);
     }
@@ -39,12 +39,12 @@ public class WebTestSB implements WebTestSBLocal {
     }
     
     @Override
-    public List<String> getAnswers() {
+    public List<Integer> getAnswers() {
         return answers;
     }
     
     @Override
-    public List<String> getUserAnswers() {
+    public List<Integer> getUserAnswers() {
         return userAnswers;
     }
     
