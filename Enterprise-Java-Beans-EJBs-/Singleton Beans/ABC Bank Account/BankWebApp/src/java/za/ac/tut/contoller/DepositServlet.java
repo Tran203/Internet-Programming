@@ -28,7 +28,7 @@ public class DepositServlet extends HttpServlet {
          
          //get DATA
          Double amt = Double.parseDouble(request.getParameter("amt"));
-          AccountTransactionSingletonLocal bank = ( AccountTransactionSingletonLocal)session.getAttribute("bank");
+         AccountTransactionSingletonLocal bank = ( AccountTransactionSingletonLocal)session.getAttribute("bank");
           
         //bank with us
         bank.deposit(amt);
