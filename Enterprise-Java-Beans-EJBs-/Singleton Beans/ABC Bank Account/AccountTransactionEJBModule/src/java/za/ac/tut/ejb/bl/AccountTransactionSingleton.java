@@ -13,7 +13,32 @@ import javax.ejb.Singleton;
  */
 @Singleton
 public class AccountTransactionSingleton implements AccountTransactionSingletonLocal {
+    //initial amount
+    private Double balance = 1000.0;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public Double checkBalance() {
+        return balance;
+    }
+
+    @Override
+    public void deposit(double amt) {
+        balance += amt;
+    }
+
+    @Override
+    public Double withdraw(double amt) {
+        Double amtGot;
+        if(amt > balance){
+            amtGot = balance;
+        }else{
+            amtGot = amt;
+        }
+        //withdraw
+        balance -= amtGot;
+        
+        return amtGot;
+    }
+    
+    
 }
