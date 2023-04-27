@@ -4,9 +4,17 @@
         <servlet-name>StartSessionServlet</servlet-name>
         <servlet-class>za.ac.tut.contoller.StartSessionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BuyTicketsServlet</servlet-name>
+        <servlet-class>za.ac.tut.contoller.BuyTicketsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>StartSessionServlet</servlet-name>
         <url-pattern>/StartSessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BuyTicketsServlet</servlet-name>
+        <url-pattern>/BuyTicketsServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
