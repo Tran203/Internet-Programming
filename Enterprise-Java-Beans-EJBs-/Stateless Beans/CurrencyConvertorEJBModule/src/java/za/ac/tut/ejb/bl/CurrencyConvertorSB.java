@@ -13,7 +13,19 @@ import javax.ejb.Stateless;
  */
 @Stateless
 public class CurrencyConvertorSB implements CurrencyConvertorSBLocal {
+    //custom RATE
+    private final Double RATE = 20.00;
 
-    // Add business logic below. (Right-click in editor and choose
-    // "Insert Code > Add Business Method")
+    @Override
+    public Double convertToDollar(double amt) {
+        Double dollar = amt / RATE;
+        return dollar;
+    }
+
+    @Override
+    public Double convertToRand(double amt) {
+        Double rand = amt * RATE;
+        return rand;
+    }
+    
 }

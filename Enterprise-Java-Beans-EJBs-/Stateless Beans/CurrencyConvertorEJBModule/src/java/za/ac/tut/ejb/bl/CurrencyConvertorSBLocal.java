@@ -13,5 +13,9 @@ import javax.ejb.Local;
  */
 @Local
 public interface CurrencyConvertorSBLocal {
+
+    Double convertToDollar(double amt);
+
+    Double convertToRand(double amt);
     
 }
