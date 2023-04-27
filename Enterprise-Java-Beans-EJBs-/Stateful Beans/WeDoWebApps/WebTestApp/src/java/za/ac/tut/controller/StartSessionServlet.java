@@ -30,13 +30,15 @@ public class StartSessionServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         //prepare  Data
-        Integer totQuestions= 0;
+        Integer totQuestions= 5;
+        Integer  numQuestions = 0;
         Integer numCorrect= 0;
         Integer numWrong= 0;
         
         //pass into session
         session.setAttribute("record", record);
         session.setAttribute("totQuestions", totQuestions);
+        session.setAttribute("numQuestions",  numQuestions);
         session.setAttribute("numCorrect", numCorrect);
         session.setAttribute("numWrong", numWrong);
         

@@ -45,7 +45,6 @@ public class QuestionPaper {
         
         session.setAttribute("answer", answer);
         
-
         return question;
     }
 

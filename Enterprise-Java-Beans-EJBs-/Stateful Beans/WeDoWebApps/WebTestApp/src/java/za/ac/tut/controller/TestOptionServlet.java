@@ -28,13 +28,16 @@ public class TestOptionServlet extends HttpServlet {
         
         //get user Data
         String testOption = request.getParameter("testOption");
+        Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
         
         //call for help
         QuestionPaper help = new QuestionPaper();
         String question = help.getQuestion(session, testOption);
+        numQuestions++;
         
         //pass into session
         session.setAttribute("testOption", testOption);
+        session.setAttribute(" numQuestions",numQuestions);
         request.setAttribute("question", question);
         
         //request
