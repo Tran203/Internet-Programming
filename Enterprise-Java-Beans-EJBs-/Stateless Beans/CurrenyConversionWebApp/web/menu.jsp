@@ -9,9 +9,14 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Menu Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Menu</h1>
+        <p>Please select one of the following:</p>
+        <ul>
+            <li>Click <a href="rand_to_dollar.jsp">here</a> to convert rand(R) to dollar($)</li>
+            <li>Click <a href="dollar_to_rand.jsp">here</a> to convert dollar($) to rand(R) </li>
+        </ul>
     </body>
 </html>
