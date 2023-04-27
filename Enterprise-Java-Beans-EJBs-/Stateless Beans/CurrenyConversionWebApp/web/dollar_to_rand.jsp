@@ -14,7 +14,7 @@
     <body>
         <h1>Dollar To Rand</h1>
         <p>
-            <summary>Please enter the Rand amount below to convert.</summary>
+            <summary>Please enter the Dollar amount below to convert.</summary>
         </p>
         <form action="DollarToRandServlet.do" method="POST">
             <table>
