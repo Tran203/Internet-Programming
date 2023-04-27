@@ -1,6 +1,6 @@
 <%-- 
-    Document   : rand_to_dollar
-    Created on : 27 Apr 2023, 3:09:39 PM
+    Document   : dollar_to_rand
+    Created on : 27 Apr 2023, 3:13:51 PM
     Author     : Student
 --%>
 
@@ -12,14 +12,14 @@
         <title>Conversion Page</title>
     </head>
     <body>
-        <h1>Rand To Dollar</h1>
+        <h1>Dollar To Rand</h1>
         <p>
             <summary>Please enter the Rand amount below to convert.</summary>
         </p>
-        <form action="RandToDollarServlet.do" method="POST">
+        <form action="DollarToRandServlet.do" method="POST">
             <table>
                 <tr>
-                    <td>Rand Amount(R):</td>
+                    <td>Dollar Amount($):</td>
                     <td><input type="number" name="amt"></td>
                 </tr>
                 <tr>
