@@ -19,7 +19,7 @@
                 You can select the <em>Test of your <b>choice</b></em>.
             </p>
         </details>
-        <form action="TestOptionServlet.do" method="POST">
+        <form action="QuestionPreparationServlet.do" method="POST">
             <table>
                 <tr>
                     <td>Test Choice<td>

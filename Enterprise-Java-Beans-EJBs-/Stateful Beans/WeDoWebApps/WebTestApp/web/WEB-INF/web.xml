@@ -10,7 +10,7 @@
     </servlet>
     <servlet>
         <servlet-name>TestOptionServlet</servlet-name>
-        <servlet-class>za.ac.tut.controller.TestOptionServlet</servlet-class>
+        <servlet-class>za.ac.tut.controller.QuestionPreparationServlet</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>CheckAnswerServlet</servlet-name>
@@ -25,8 +25,8 @@
         <url-pattern>/NameEntryServlet.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>TestOptionServlet</servlet-name>
-        <url-pattern>/TestOptionServlet.do</url-pattern>
+        <servlet-name>QuestionPreparationServlet</servlet-name>
+        <url-pattern>/QuestionPreparationServlet.do</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>CheckAnswerServlet</servlet-name>

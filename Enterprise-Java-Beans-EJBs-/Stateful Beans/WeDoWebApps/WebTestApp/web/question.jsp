@@ -2,7 +2,7 @@
     String name = (String)session.getAttribute("name");
     Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
     Integer  totQuestions = (Integer)session.getAttribute("totQuestions");
-    String question =(String)request.getAttribute("question");
+    String question =(String)session.getAttribute("question");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

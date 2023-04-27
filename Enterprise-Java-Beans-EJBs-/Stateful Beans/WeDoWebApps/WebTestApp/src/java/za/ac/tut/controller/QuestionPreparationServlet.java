@@ -19,7 +19,7 @@ import za.ac.tut.model.QuestionPaper;
  *
  * @author Student
  */
-public class TestOptionServlet extends HttpServlet {
+public class QuestionPreparationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -38,7 +38,7 @@ public class TestOptionServlet extends HttpServlet {
         //pass into session
         session.setAttribute("testOption", testOption);
         session.setAttribute(" numQuestions",numQuestions);
-        request.setAttribute("question", question);
+        session.setAttribute("question", question);
         
         //request
         RequestDispatcher disp = request.getRequestDispatcher("question.jsp");
