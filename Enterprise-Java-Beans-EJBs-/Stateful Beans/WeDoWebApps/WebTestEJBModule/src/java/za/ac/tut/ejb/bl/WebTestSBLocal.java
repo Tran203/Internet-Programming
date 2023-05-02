@@ -7,6 +7,7 @@ package za.ac.tut.ejb.bl;
 
 import java.util.List;
 import javax.ejb.Local;
+import za.ac.tut.model.QuestionHistory;
 
 /**
  *
@@ -15,16 +16,9 @@ import javax.ejb.Local;
 @Local
 public interface WebTestSBLocal {
 
-    void recordQuestionAndAnswer(String question, Integer answer);
+    void recordQuestionHistory(QuestionHistory question);
 
-    void recordUserAnswerAndResult(Integer userAnswer, String result);
+    List<QuestionHistory> getHistory();
 
-    List<String> getQuestions();
-    
-    List<Integer> getAnswers();
-    
-    List<Integer> getUserAnswers();
-    
-    List<String> getResults();
-    
+   
 }

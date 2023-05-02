@@ -8,6 +8,7 @@ package za.ac.tut.ejb.bl;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.Stateful;
+import za.ac.tut.model.QuestionHistory;
 
 /**
  *
@@ -16,7 +17,18 @@ import javax.ejb.Stateful;
 @Stateful
 public class WebTestSB implements WebTestSBLocal {
     //Custom data
-    List<QuestionHistory> question = new ArrayList();
+    List<QuestionHistory> questionHistory = new ArrayList();
+
+    @Override
+    public void recordQuestionHistory(QuestionHistory question) {
+        questionHistory.add(question);
+    }
+
+    @Override
+    public List<QuestionHistory> getHistory() {
+        return questionHistory;
+    }
+
     
     
     
