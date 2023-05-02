@@ -16,42 +16,7 @@ import javax.ejb.Stateful;
 @Stateful
 public class WebTestSB implements WebTestSBLocal {
     //Custom data
-    private List<String> questions = new ArrayList();
-    private List<Integer> answers = new ArrayList();
-    private List<Integer> userAnswers = new ArrayList();
-    private List<String> results = new ArrayList();
-
-    @Override
-    public void recordQuestionAndAnswer(String question, Integer answer) {
-        questions.add(question);
-        answers.add(answer);
-    }
-
-    @Override
-    public void recordUserAnswerAndResult(Integer userAnswer, String result) {
-        userAnswers.add(userAnswer);
-        results.add(result);
-    }
-
-    @Override
-    public List<String> getQuestions() {
-        return questions;
-    }
-    
-    @Override
-    public List<Integer> getAnswers() {
-        return answers;
-    }
-    
-    @Override
-    public List<Integer> getUserAnswers() {
-        return userAnswers;
-    }
-    
-    @Override
-    public List<String> getResults() {
-        return results;
-    }
+    List<QuestionHistory> question = new ArrayList();
     
     
     
