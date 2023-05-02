@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.ejb.bl.WebTestSBLocal;
+import za.ac.tut.model.QuestionHistory;
 
 /**
  *
@@ -27,6 +28,7 @@ public class CheckAnswerServlet extends HttpServlet {
         HttpSession session = request.getSession(true);
         
         //get user Data
+        String question =(String)session.getAttribute("question");
         Integer userAnswer = Integer.parseInt(request.getParameter("userAnswer"));
         
         Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
@@ -48,8 +50,9 @@ public class CheckAnswerServlet extends HttpServlet {
             numWrong++;
         }
         
-        //record
-        record.recordUserAnswerAndResult(userAnswer, result);
+         //record data
+        QuestionHistory questionData = new QuestionHistory(numQuestions,question,userAnswer,answer,result);
+        record.recordQuestionHistory(questionData);
         
         //pass into session
         session.setAttribute("numCorrect", numCorrect);

@@ -39,12 +39,7 @@ public class QuestionPaper {
         //get the answer
         Integer answer = getAnswer(num1, num2, op);
         
-        //record data
-        WebTestSBLocal record = (WebTestSBLocal)session.getAttribute("record");
-        record.recordQuestionAndAnswer(question, answer);
-        
         //pass into session
-        session.setAttribute("record", record);
         session.setAttribute("answer", answer);
         
         return question;
