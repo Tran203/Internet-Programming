@@ -13,35 +13,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.ac.tut.model.QuestionPaper;
 
 /**
  *
  * @author Student
  */
-public class QuestionPreparationServlet extends HttpServlet {
+public class ChoiceServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //session
+        //validtae session
         HttpSession session = request.getSession(true);
         
-        //get user Data
-        String testOption = (String)session.getAttribute("testOption");
-        Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
+        //get user choice
+        String testOption = request.getParameter("testOption");
         
-        //call for help
-        QuestionPaper help = new QuestionPaper();
-        String question = help.getQuestion(session, testOption);
-        numQuestions++;
+    
         
-        //pass into session
+        //pass int session
+        session.setAttribute("testOption", testOption);
         
-        session.setAttribute("numQuestions",numQuestions);
-        session.setAttribute("question", question);
         
-        //request
-        RequestDispatcher disp = request.getRequestDispatcher("question.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("confirm_test.jsp");
         disp.forward(request, response);
     }
 }

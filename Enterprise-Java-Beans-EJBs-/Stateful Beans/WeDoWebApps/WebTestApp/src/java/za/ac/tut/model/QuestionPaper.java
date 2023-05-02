@@ -13,7 +13,7 @@ import za.ac.tut.ejb.bl.WebTestSBLocal;
  * @author Student
  */
 public class QuestionPaper {
-
+    
     public String getQuestion(HttpSession session, String testOption) {
         String question = "";
 
@@ -34,7 +34,7 @@ public class QuestionPaper {
         String op = getOperator(testOption);
 
         //write the whole question to user
-        question = num1 + " " + op + " num2";
+        question = num1 + " " + op + " " + num2;
 
         //get the answer
         Integer answer = getAnswer(num1, num2, op);
@@ -90,5 +90,5 @@ public class QuestionPaper {
         
         return answer;
     }
-
+    
 }

@@ -1,3 +1,5 @@
+<%@page import="java.util.List"%>
+<%@page import="za.ac.tut.ejb.bl.WebTestSBLocal"%>
 <%
     Integer numQuestions = (Integer) session.getAttribute("numQuestions");
     Integer totQuestions = (Integer) session.getAttribute("totQuestions");
@@ -5,12 +7,25 @@
     Integer numCorrect = (Integer) session.getAttribute("numCorrect");
     Integer numWrong = (Integer) session.getAttribute("numWrong");
     
-    String testOption = (String)session.getAttribute("testOption");    
-     //calculate
-    Double result = ((double)numCorrect/totQuestions)* 100;
+    String testOption = (String)session.getAttribute("testOption"); 
+    String name = (String)session.getAttribute("name");
+    String gender = (String)session.getAttribute("gender");
+    
+    //get User Data
+    WebTestSBLocal record = (WebTestSBLocal)session.getAttribute("record");
+    
+    List<String> questions = record.getQuestions();
+    List<Integer> answers = record.getAnswers();
+    List<Integer> userAnswers = record.getUserAnswers();
+    List<String> results = record.getResults();
+    
+    
+    
+     //calculate Final Results
+    Double perResult = ((double)numCorrect/totQuestions)* 100;
     String msg = "Congratulations, You've qualify for the next round";
     
-    if(result < 70.00){
+    if(perResult < 70.00){
         msg = "Sorry, You've failed the test";
     }
 %>
@@ -24,11 +39,41 @@
     </head>
     <body>
         <h1>Summary</h1>
-        <h1>Test Result</h1>
+        <p>Dear <b><%=gender%></b> <em><%=name%></em>, please see your summary below</p>
+        
         <table>
+            <caption>Test Taken Information</caption>
+            <thead>
+                <tr>
+                    <td>Question Asked</td>
+                    <td>Your Answer</td>
+                    <td>Actual Answer</td>
+                    <td>Outcome</td>
+                </tr>
+            </thead>
+            <tbody>
+                <%for (String question: questions) {
+                    for (Integer userAnswer: userAnswers){
+                        for(Integer answer: answers){
+                            for(String result: results){
+                %>
+                <tr>
+                    <td><%=question%></td>
+                    <td><%=userAnswer%></td>
+                    <td><%=answer%></td>
+                    <td>You were <b><%=result%></b></td>
+                </tr>
+                <%}}}}%>
+            </tbody>
+        </table>
+            
+        <br><br>
+        
+        <table>
+            <caption>Test Results</caption>
                 <tr>
                     <td>Test Chosen</td>
-                    <td><%=testOption%> compentacy  Test</td>
+                    <td><%=testOption%> Test</td>
                 </tr>
                 <tr>
                     <td>Total Question Asked:</td>
@@ -44,12 +89,12 @@
                 </tr>
                 <tr>
                     <td>Result:</td>
-                    <td><%=result%>%</td>
+                    <td><%=perResult%>%</td>
                 </tr>
                 <tr>
                     <td>Status:</td>
-                    <td><%=msg%></td>
+                    <td><b><%=msg%></b></td>
                 </tr>
-            </table>
+        </table>
     </body>
 </html>
