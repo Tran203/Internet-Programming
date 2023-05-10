@@ -47,5 +47,7 @@
                  }
             %>
         </table>
+        
+        <p>Click <a href="menu.jsp">here</a> to return to the menu</p>
     </body>
 </html>
