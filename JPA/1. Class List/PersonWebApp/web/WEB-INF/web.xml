@@ -12,6 +12,18 @@
         <servlet-name>SearchPersonServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.SearchPersonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetListServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetListServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>RemovePersonServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.RemovePersonServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetListSizeServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetListSizeServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddPersonServlet</servlet-name>
         <url-pattern>/AddPersonServlet.do</url-pattern>
@@ -23,6 +35,18 @@
     <servlet-mapping>
         <servlet-name>SearchPersonServlet</servlet-name>
         <url-pattern>/SearchPersonServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetListServlet</servlet-name>
+        <url-pattern>/GetListServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>RemovePersonServlet</servlet-name>
+        <url-pattern>/RemovePersonServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetListSizeServlet</servlet-name>
+        <url-pattern>/GetListSizeServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
