@@ -8,12 +8,13 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Search Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Search outcome</h1>
         <p>
             <b><%=person.getName()%> <%=person.getSurname()%> [<%=person.getId()%>]</b>
+            Please click <a href="../menu.jsp">here</a> to go to menu
         </p>
     </body>
 </html>
