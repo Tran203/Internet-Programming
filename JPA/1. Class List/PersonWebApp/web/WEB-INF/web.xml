@@ -4,9 +4,25 @@
         <servlet-name>AddPersonServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.AddPersonServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>EditPersonServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.EditPersonServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SearchPersonServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.SearchPersonServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddPersonServlet</servlet-name>
         <url-pattern>/AddPersonServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>EditPersonServlet</servlet-name>
+        <url-pattern>/EditPersonServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchPersonServlet</servlet-name>
+        <url-pattern>/SearchPersonServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
