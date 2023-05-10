@@ -1,8 +1,7 @@
-<%-- 
-    Document   : search_person_outcome
-    Created on : 10 May 2023, 10:53:51 PM
-    Author     : Student
---%>
+<%@page import="za.ac.tut.entities.Person"%>
+<%
+    Person person = (Person)request.getAttribute("Person");
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,5 +12,8 @@
     </head>
     <body>
         <h1>Hello World!</h1>
+        <p>
+            <b><%=person.getName()%> <%=person.getSurname()%> [<%=person.getId()%>]</b>
+        </p>
     </body>
 </html>
