@@ -21,6 +21,10 @@ public class AddPersonServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //get user data
+        String name =  request.getParameter("name");
+        String surname = request.getParameter("surname");
+        String gender = request.getParameter("gender");
         //request
         RequestDispatcher disp=  request.getRequestDispatcher("");
         disp.forward(request, response);
