@@ -33,9 +33,14 @@ public class AddPersonServlet extends HttpServlet {
         
         //create a person
         Person person = createPerson(name,surname,gender);
+        pfl.create(person);
+        
+        //pass back to user
+        request.setAttribute("name", name);
+        request.setAttribute("surname", surname);
         
         //request
-        RequestDispatcher disp=  request.getRequestDispatcher("");
+        RequestDispatcher disp=  request.getRequestDispatcher("./outcome_pages/adding_person_outcome.jsp");
         disp.forward(request, response);
     }
 
