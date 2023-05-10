@@ -30,8 +30,11 @@ public class GetAllServlet extends HttpServlet {
         //get our data
         List<AccountHolder> list = pfl.findAll();
         
+        //pass back
+        request.setAttribute("list", list);
+        
         //request
-        RequestDispatcher disp = request.getRequestDispatcher("");
+        RequestDispatcher disp = request.getRequestDispatcher("get_all_outcome.jsp");
         disp.forward(request, response);
     }
 }
