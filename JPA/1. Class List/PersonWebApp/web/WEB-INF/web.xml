@@ -24,6 +24,10 @@
         <servlet-name>GetListSizeServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.GetListSizeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetPartialListServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetPartialListServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddPersonServlet</servlet-name>
         <url-pattern>/AddPersonServlet.do</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>GetListSizeServlet</servlet-name>
         <url-pattern>/GetListSizeServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetPartialListServlet</servlet-name>
+        <url-pattern>/GetPartialListServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

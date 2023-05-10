@@ -7,6 +7,7 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -14,23 +15,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.bl.PersonFacadeLocal;
+import za.ac.tut.entities.Person;
 
 /**
  *
  * @author Student
  */
-public class GetListSizeServlet extends HttpServlet {
-    @EJB
+public class GetPartialListServlet extends HttpServlet {
+@EJB
     private PersonFacadeLocal pfl;
 @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        Integer size = pfl.count();
+       Integer min = Integer.parseInt(request.getParameter("min"));
+       Integer max = Integer.parseInt(request.getParameter("max"));
+       
+       int[] range = {min, max};
+       
+       List<Person> list = pfl.findRange(range);
+       
+       request.setAttribute("min", min);
+       request.setAttribute("max", max);
+       request.setAttribute("list", list);
         
-        //pass back to user
-        request.setAttribute("size", size);
         //request
-        RequestDispatcher disp=  request.getRequestDispatcher("./outcome_pages/get_size_outcome.jsp");
+        RequestDispatcher disp=  request.getRequestDispatcher("./outcome_pages/get_partial_list_outcome.jsp");
         disp.forward(request, response);
     }
 }

@@ -18,11 +18,11 @@
             <table>
                 <tr>
                     <td>Start index:</td>
-                    <td><input type="text" name="startIndex"></td>
+                    <td><input type="text" name="min"></td>
                 </tr>
                 <tr>
                     <td>Last index:</td>
-                    <td><input type="text" name="endIndex"></td>
+                    <td><input type="text" name="max"></td>
                 </tr>
                 <tr>
                     <td></td>
