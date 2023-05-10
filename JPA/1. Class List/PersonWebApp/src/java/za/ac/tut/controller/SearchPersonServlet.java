@@ -33,7 +33,7 @@ public class SearchPersonServlet extends HttpServlet {
         request.setAttribute("person", person);
         
         //request
-        RequestDispatcher disp=  request.getRequestDispatcher("");
+        RequestDispatcher disp=  request.getRequestDispatcher("./outcome_pages/search_person_outcome.jsp");
         disp.forward(request, response);
     }
 }

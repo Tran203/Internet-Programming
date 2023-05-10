@@ -1,7 +1,8 @@
-<%@page import="za.ac.tut.entities.Person"%>
-<%
-    Person person = (Person)request.getAttribute("Person");
-%>
+<%-- 
+    Document   : search_person_outcome
+    Created on : 10 May 2023, 10:53:51 PM
+    Author     : Student
+--%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
