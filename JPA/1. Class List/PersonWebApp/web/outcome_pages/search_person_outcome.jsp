@@ -1,6 +1,6 @@
 <%@page import="za.ac.tut.entities.Person"%>
 <%
-    Person person = (Person)request.getAttribute("Person");
+    Person person = (Person)request.getAttribute("person");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,8 +13,8 @@
     <body>
         <h1>Search outcome</h1>
         <p>
-            <b><%=person.getName()%> <%=person.getSurname()%> [<%=person.getId()%>]</b>
-            Please click <a href="../menu.jsp">here</a> to go to menu
+            <b><%=person.getName()%> <%=person.getSurname()%> [<%=person.getId()%>]</b> was found
+            Please click <a href="./menu.jsp">here</a> to go to menu
         </p>
     </body>
 </html>

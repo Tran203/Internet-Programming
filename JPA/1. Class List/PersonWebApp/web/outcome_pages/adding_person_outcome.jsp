@@ -1,6 +1,7 @@
-<%@page import="za.ac.tut.entities.Person"%>
+
 <%
-    
+    String name = (String)request.getAttribute("name");
+    String surname = (String)request.getAttribute("surname");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -13,7 +14,8 @@
     <body>
         <h1>Hello World!</h1>
         <p>
-            <b><%=person.getName()%> <%=person.getSurname()%> [<%=person.getId()%>]</b>
+            <b><%=name%> <%=surname%></b> was added to the database
+            lease click <a href="./menu.jsp">here</a> to go to menu
         </p>
     </body>
 </html>
