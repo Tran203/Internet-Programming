@@ -39,7 +39,7 @@ public class AddStudentServlet extends HttpServlet {
         
        
         //reuww
-        RequestDispatcher disp = request.getRequestDispatcher("");
+        RequestDispatcher disp = request.getRequestDispatcher("./outcome/adding_student_outcome.jsp");
         disp.forward(request, response);
     }
 
