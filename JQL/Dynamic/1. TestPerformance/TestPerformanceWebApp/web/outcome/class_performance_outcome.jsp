@@ -18,7 +18,7 @@
     Integer cntPassedMale = (Integer) request.getAttribute("cntPassedMale");
 
     Integer cntFailedFemale = (Integer) request.getAttribute("cntFailedFemale");
-    Integer cntPassedFemale  = (Integer) request.getAttribute("cntPassedFemale ");
+    Integer cntPassedFemale = (Integer) request.getAttribute("cntPassedFemale ");
 %>
 
 
@@ -33,7 +33,54 @@
         <h1>Class Performance</h1>
         <p>Please see the class performance below:</p>
         <table>
-
+            <tr>
+                <td>Class Total:</td>
+                <td><%=totInClass%></td>
+            </tr>
+            <tr>
+                <td>Student Passed</td>
+                <td><%=cntPassed%></td>
+            </tr>
+            <tr>
+                <td>Students Failed:</td>
+                <td><%=cntFailed%></td>
+            </tr>
+            <tr>
+                <td>No. of Female</td>
+                <td><%=cntFemales%></td>
+            </tr>
+            <tr>
+                <td>No. od Male:</td>
+                <td><%=cntMales%></td>
+            </tr>
+            <tr>
+                <td>No. of Female Passed</td>
+                <td><%=cntPassedFemale%></td>
+            </tr>
+            <tr>
+                <td>No. of Female Failed:</td>
+                <td><%=cntFailedFemale%></td>
+            </tr>
+            <tr>
+                <td>No. of Male Passed:</td>
+                <td><%=cntPassedMale%></td>
+            </tr>
+            <tr>
+                <td>No. of Male Failed:</td>
+                <td><%=cntFailedMale%></td>
+            </tr>
+            <tr>
+                <td>Highest Mark:</td>
+                <td><%=highestMark%></td>
+            </tr>
+            <tr>
+                <td>Lowest Mark:</td>
+                <td><%=lowestMark%></td>
+            </tr>
+            <tr>
+                <td>Average Mark:</td>
+                <td><%=avgMark%></td>
+            </tr>
         </table>
 
 
@@ -67,5 +114,7 @@
                 }
             %>
         </table>
+        
+        <p> Please click <a href="./menu.jsp">here</a> to go to menu</p>
     </body>
 </html>
