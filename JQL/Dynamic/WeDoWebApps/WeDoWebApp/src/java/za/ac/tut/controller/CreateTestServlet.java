@@ -56,8 +56,8 @@ public class CreateTestServlet extends HttpServlet {
         qp1.setQuestion(q1);
         qp1.setAnswer(ans1);
         
-        qp2.setQuestion(q1);
-        qp2.setAnswer(ans1);
+        qp2.setQuestion(q2);
+        qp2.setAnswer(ans2);
         
         //ADD
         questions.add(qp1);
