@@ -6,54 +6,48 @@
 package za.ac.tut.entities;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 /**
  *
  * @author Student
  */
 @Entity
-public class Student implements Serializable {
+public class QuestionPaper implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name="STUDENT_NR")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
-    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
-    private List<StudentWork> stdData = new ArrayList<>();
+    private String question;
+    private Integer answer;
 
-    public Student() {
+    public QuestionPaper() {
     }
 
-    public Student(Long id, String name) {
+    public QuestionPaper(Long id, String question, Integer answer) {
         this.id = id;
-        this.name = name;
+        this.question = question;
+        this.answer = answer;
     }
 
-    public String getName() {
-        return name;
+    public String getQuestion() {
+        return question;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setQuestion(String question) {
+        this.question = question;
     }
 
-    public List<StudentWork> getStdData() {
-        return stdData;
+    public Integer getAnswer() {
+        return answer;
     }
 
-    public void setStdData(List<StudentWork> stdData) {
-        this.stdData = stdData;
+    public void setAnswer(Integer answer) {
+        this.answer = answer;
     }
     
     
@@ -76,10 +70,10 @@ public class Student implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Student)) {
+        if (!(object instanceof QuestionPaper)) {
             return false;
         }
-        Student other = (Student) object;
+        QuestionPaper other = (QuestionPaper) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -88,7 +82,7 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "za.ac.tut.entities.Student[ id=" + id + " ]";
+        return "za.ac.tut.entities.QuestionPaper[ id=" + id + " ]";
     }
     
 }

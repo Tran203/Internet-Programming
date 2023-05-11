@@ -9,7 +9,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.CascadeType;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -22,39 +21,32 @@ import javax.persistence.OneToMany;
  * @author Student
  */
 @Entity
-public class Student implements Serializable {
+public class Teacher implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @Column(name="STUDENT_NR")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String name;
     @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
-    private List<StudentWork> stdData = new ArrayList<>();
+    private List<QuestionPaper> testData;
 
-    public Student() {
+    public Teacher() {
     }
 
-    public Student(Long id, String name) {
+    public Teacher(Long id, List<QuestionPaper> testData) {
         this.id = id;
-        this.name = name;
+        this.testData = testData;
     }
 
-    public String getName() {
-        return name;
+    public List<QuestionPaper> getTestData() {
+        return testData;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTestData(List<QuestionPaper> testData) {
+        this.testData = testData;
     }
-
-    public List<StudentWork> getStdData() {
-        return stdData;
-    }
-
-    public void setStdData(List<StudentWork> stdData) {
-        this.stdData = stdData;
-    }
+    
+    
     
     
 
@@ -76,10 +68,10 @@ public class Student implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Student)) {
+        if (!(object instanceof Teacher)) {
             return false;
         }
-        Student other = (Student) object;
+        Teacher other = (Teacher) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -88,7 +80,7 @@ public class Student implements Serializable {
 
     @Override
     public String toString() {
-        return "za.ac.tut.entities.Student[ id=" + id + " ]";
+        return "za.ac.tut.entities.Teacher[ id=" + id + " ]";
     }
     
 }
