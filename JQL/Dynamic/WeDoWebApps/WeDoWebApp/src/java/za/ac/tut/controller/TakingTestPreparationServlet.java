@@ -42,10 +42,11 @@ public class TakingTestPreparationServlet extends HttpServlet {
         request.setAttribute("testData", testData);
         
         //record std details for future purposes
-        s
+        session.setAttribute("stdNo", stdNo);
+        session.setAttribute("name", name);
      
         
-        RequestDispatcher disp = request.getRequestDispatcher("creating_test_outcome.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("test.jsp");
         disp.forward(request, response);
     }
 }
