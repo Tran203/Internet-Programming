@@ -4,9 +4,17 @@
         <servlet-name>CreateTestServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.CreateTestServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TakingTestPreparationServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.TakingTestPreparationServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateTestServlet</servlet-name>
         <url-pattern>/CreateTestServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TakingTestPreparationServlet</servlet-name>
+        <url-pattern>/TakingTestPreparationServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
