@@ -1,0 +1,49 @@
+<%@page import="java.util.List"%>
+<%@page import="za.ac.tut.entities.Student"%>
+<%
+    List<Student> list = (List<Student>)request.getAttribute("list");
+%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+    </head>
+    <body>
+        <h1>Getting Students using age</h1>
+        <p>See the list of students between the specified age range</p>
+        <table>
+            <%
+                for(int i = 0; i < list.size(); i++){
+                    Student std = list.get(i);
+            %>
+                <tr>
+                    <td>Name:</td>
+                    <td><%=std.getName()%></td>
+                </tr>
+                <tr>
+                    <td>Surname:</td>
+                    <td><%=std.getSurname()%></td>
+                </tr>
+                <tr>
+                    <td>Gender:</td>
+                    <td><%=std.getGender()%></td>
+                </tr>
+                <tr>
+                    <td>Age:</td>
+                    <td><%=std.getAge()%></td>
+                </tr>
+                <tr>
+                    <td>Mark Obtained:</td>
+                    <td><%=std.getPercMark()%></td>
+                </tr>
+                <%
+                      }
+                %>
+            </table>
+        
+        <p> Please click <a href="./menu.jsp">here</a> to go to menu</p>
+    </body>
+</html>
