@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.bl.StudentFacadeLocal;
+import za.ac.tut.entities.Student;
 
 /**
  *
@@ -25,10 +26,17 @@ public class GetStudentUsingIDServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //
+        //get id
+        Long id = Long.parseLong(request.getParameter("id"));
+        
+        //create std
+        Student std =sfl.find(id);
+        
+        //pass
+        request.setAttribute("std", std);
         
         //reuww
-        RequestDispatcher disp = request.getRequestDispatcher("");
+        RequestDispatcher disp = request.getRequestDispatcher("./outcome/getting_student_using_id.jsp");
         disp.forward(request, response);
     }
 }

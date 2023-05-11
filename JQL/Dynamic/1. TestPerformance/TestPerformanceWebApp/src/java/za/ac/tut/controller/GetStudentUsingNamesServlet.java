@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.bl.StudentFacadeLocal;
+import za.ac.tut.entities.Student;
 
 /**
  *
@@ -25,10 +26,18 @@ public class GetStudentUsingNamesServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //
+        //get names
+        String name = request.getParameter("name");
+        String surname = request.getParameter("surname");
+        
+        //create std
+        Student std = sfl.findStudntUsingNames(name, surname);
+        
+        //pass
+        request.setAttribute("std", std);
         
         //reuww
-        RequestDispatcher disp = request.getRequestDispatcher("");
+        RequestDispatcher disp = request.getRequestDispatcher("./outcome/getting_student_using_name.jsp");
         disp.forward(request, response);
     }
 }
