@@ -44,7 +44,7 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Integer cntPassedAllMaleStd() {
         //Query create
-        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.percMark >= 50.0 AND S.GENDER = 'M'");
+        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.PERCMARK >= 50.0 AND S.GENDER = 'M'");
         //count
         Integer cnt = (Integer)query.getSingleResult();
         
@@ -54,7 +54,7 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Integer cntFailedAllMaleStd() {
         //Query create
-        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.percMark < 50.0 AND S.GENDER = 'M'");
+        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.PERCMARK < 50.0 AND S.GENDER = 'M'");
         //count
         Integer cnt = (Integer)query.getSingleResult();
         
@@ -74,7 +74,7 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Integer cntPassedAllFemaleStd() {
         //Query create
-        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.percMark >= 50.0 AND S.GENDER = 'F'");
+        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.PERCMARK >= 50.0 AND S.GENDER = 'F'");
         //count
         Integer cnt = (Integer)query.getSingleResult();
         
@@ -84,7 +84,7 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Integer cntFailedAllFemaleStd() {
         //Query create
-        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.percMark < 50.0 AND S.GENDER = 'F'");
+        Query query = em.createQuery("SELECT COUNT(S) FROMS STUDENT S WHERE S.PERCMARK < 50.0 AND S.GENDER = 'F'");
         //count
         Integer cnt = (Integer)query.getSingleResult();
         
@@ -108,16 +108,15 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Double getHighestMArk() {
         //Query create
-        Query query = em.createQuery("SELECT MAX(S.percMark) FROM STUDENT S");
+        Query query = em.createQuery("SELECT MAX(S.PERCMARK) FROM STUDENT S");
         Double mark = (Double)query.getSingleResult();
         
         return mark;
     }
-
     @Override
     public Double getLowestMark() {
         //Query create
-        Query query = em.createQuery("SELECT MIN(S.percMark) FROM STUDENT S");
+        Query query = em.createQuery("SELECT MIN(S.PERCMARK) FROM STUDENT S");
         Double mark = (Double)query.getSingleResult();
         
         return mark;
@@ -126,7 +125,7 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public Double getAvgMark() {
         //Query create
-        Query query = em.createQuery("SELECT AVG(S.percMark) FROM STUDENT S");
+        Query query = em.createQuery("SELECT AVG(S.PERCMARK) FROM STUDENT S");
         Double mark = (Double)query.getSingleResult();
         
         return mark;

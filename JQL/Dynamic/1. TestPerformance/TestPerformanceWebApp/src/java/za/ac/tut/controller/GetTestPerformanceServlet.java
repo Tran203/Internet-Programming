@@ -27,13 +27,13 @@ public class GetTestPerformanceServlet extends HttpServlet {
     private StudentFacadeLocal sfl;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //collect data from database
         List<Student> list = sfl.findAll();
         Integer totInClass = sfl.count();
         //Marks
-        Double lowestMark = sfl.getLowestMark();
+        Double lowestMark = sfl.getHighestMArk();
         Double highestMark = sfl.getHighestMArk();
         Double avgMark = sfl.getAvgMark();
 

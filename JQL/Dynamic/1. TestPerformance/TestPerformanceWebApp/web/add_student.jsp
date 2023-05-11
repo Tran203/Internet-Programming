@@ -28,8 +28,8 @@
                     <td>Gender:</td>
                     <td>
                         <select name="gender">
-                            <option vale="M">Male</option
-                            <option valuer="F">Female</option>
+                            <option value="M">Male</option>
+                            <option value="F">Female</option>
                         </select>
                     </td>
                 </tr>
@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="Add"></td>
+                    <td><input type="submit" value="Add"></td>
                 </tr>
             </table>
         </form>
