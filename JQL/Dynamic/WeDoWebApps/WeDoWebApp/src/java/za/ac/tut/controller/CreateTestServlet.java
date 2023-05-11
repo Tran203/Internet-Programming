@@ -39,6 +39,9 @@ public class CreateTestServlet extends HttpServlet {
         //create test
         Teacher t = createTest(q1,q2,ans1,ans2);
         
+        //INSEER INTO DATABASE
+        tfl.create(t);
+        
         RequestDispatcher disp = request.getRequestDispatcher("creating_test_outcome.jsp");
         disp.forward(request, response);
     }
