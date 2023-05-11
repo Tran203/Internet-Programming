@@ -6,6 +6,7 @@
 package za.ac.tut.entities;
 
 import java.io.Serializable;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -22,7 +23,9 @@ public class QuestionPaper implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name="QUESTION", nullable=false, length=50)
     private String question;
+    @Column(name="ANSWER", nullable=false, length=20)
     private Integer answer;
 
     public QuestionPaper() {
