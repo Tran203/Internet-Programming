@@ -28,6 +28,10 @@
         <servlet-name>GetPassedStudents</servlet-name>
         <servlet-class>za.ac.tut.controller.GetPassedStudents</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetHighestStudent</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetHighestStudent</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateTestServlet</servlet-name>
         <url-pattern>/CreateTestServlet.do</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>GetPassedStudents</servlet-name>
         <url-pattern>/GetPassedStudents.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetHighestStudent</servlet-name>
+        <url-pattern>/GetHighestStudent.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

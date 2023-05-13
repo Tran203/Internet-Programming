@@ -12,23 +12,24 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Students Who Passed</h1>
         <table>
+            <caption>Students Who Passed</caption>
+            <thead>
+                <tr>
+                    <td>STUDENT No.</td>
+                    <td>Name</td>
+                    <td>Mark</td>
+                </tr>
+            </thead>
             <%
                 for(int i = 0; i < list.size(); i++){
                     Student std = list.get(i);
             %>
             <tr>
-                <td>STUDENT No.</td>
+                
                 <td><%=std.getId()%></td>
-
-            </tr>
-            <tr>
-                <td>Name</td>
                 <td><%=std.getName()%></td>
-            </tr>
-            <tr>
-                <td>Mark</td>
                 <td><%=std.getMark()%></td>
             </tr>
             <%
