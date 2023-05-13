@@ -7,6 +7,7 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -16,7 +17,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import za.ac.tut.bl.MemoFacadeLocal;
+import za.ac.tut.bl.StudentWorkFacadeLocal;
 import za.ac.tut.entities.Memo;
+import za.ac.tut.entities.StudentWork;
 
 /**
  *
@@ -25,6 +28,7 @@ import za.ac.tut.entities.Memo;
 public class TestPreparationServlet extends HttpServlet {
     @EJB
     private MemoFacadeLocal mfl;
+    private StudentWorkFacadeLocal swl;
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -36,10 +40,22 @@ public class TestPreparationServlet extends HttpServlet {
         
         Integer cnt = 0;
         
+        //prepare to save std work
+        List<StudentWork> stdWork = new ArrayList<>(); 
+        
+        //prepare test reults calc
+        Integer numCorrect = 0;
+        Integer numWrong = 0;
+        
         //pass back
         session.setAttribute("memo", memo);
         session.setAttribute("numQuestions", numQuestions);
         session.setAttribute("cnt", cnt);
+        
+        session.setAttribute("stdWork", stdWork);
+        
+        session.setAttribute("numCorrect", numCorrect);
+        session.setAttribute("numWrong", numWrong);
         
                
         RequestDispatcher disp = request.getRequestDispatcher("./student/start_test.jsp");

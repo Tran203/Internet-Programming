@@ -7,38 +7,46 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import za.ac.tut.bl.MemoFacadeLocal;
+import za.ac.tut.entities.Memo;
 
 /**
  *
  * @author Student
  */
 public class QuestionPreparationServlet extends HttpServlet {
-@Override
+
+    @EJB
+    private MemoFacadeLocal mfl;
+
+    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //session
         HttpSession session = request.getSession(true);
-        
-        //get user Data
-        String testOption = (String)session.getAttribute("testOption");
-        Integer  numQuestions = (Integer)session.getAttribute("numQuestions");
-        
-        //call for help
-        QuestionPaper help = new QuestionPaper();
-        String question = help.getQuestion(session, testOption);
-        numQuestions++;
-        
+
+        //get memo Data
+        List<Memo> memo = (List<Memo>) session.getAttribute("memo");
+
+        Integer numQuestions = (Integer) session.getAttribute("numQuestions");
+        Integer cnt = (Integer) session.getAttribute("cnt");
+
+        //get the question
+        String question = memo.get(cnt).getQuestion();
+        cnt++;
+
         //pass into session
-        
-        session.setAttribute("numQuestions",numQuestions);
+        session.setAttribute("cnt", cnt);
         session.setAttribute("question", question);
-        
+
         //request
         RequestDispatcher disp = request.getRequestDispatcher("question.jsp");
         disp.forward(request, response);

@@ -12,6 +12,10 @@
         <servlet-name>QuestionPreparationServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.QuestionPreparationServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CheckAnswerServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.CheckAnswerServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>StudentDetailsServlet</servlet-name>
         <url-pattern>/StudentDetailsServlet.do</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>QuestionPreparationServlet</servlet-name>
         <url-pattern>/QuestionPreparationServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CheckAnswerServlet</servlet-name>
+        <url-pattern>/CheckAnswerServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

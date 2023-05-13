@@ -24,14 +24,14 @@ public class StudentWork implements Serializable {
     private Long id;
     private Integer qNum;
     private String question;
-    private Integer userAnswer;
-    private Integer answer;
+    private String userAnswer;
+    private String answer;
     private String result;
 
     public StudentWork() {
     }
 
-    public StudentWork(Long id, Integer qNum, String question, Integer userAnswer, Integer answer, String result) {
+    public StudentWork(Long id, Integer qNum, String question, String userAnswer, String answer, String result) {
         this.id = id;
         this.qNum = qNum;
         this.question = question;
@@ -56,19 +56,19 @@ public class StudentWork implements Serializable {
         this.question = question;
     }
 
-    public Integer getUserAnswer() {
+    public String getUserAnswer() {
         return userAnswer;
     }
 
-    public void setUserAnswer(Integer userAnswer) {
+    public void setUserAnswer(String userAnswer) {
         this.userAnswer = userAnswer;
     }
 
-    public Integer getAnswer() {
+    public String getAnswer() {
         return answer;
     }
 
-    public void setAnswer(Integer answer) {
+    public void setAnswer(String answer) {
         this.answer = answer;
     }
 
@@ -79,7 +79,10 @@ public class StudentWork implements Serializable {
     public void setResult(String result) {
         this.result = result;
     }
-    
+
+   
+
+   
     
 
 
