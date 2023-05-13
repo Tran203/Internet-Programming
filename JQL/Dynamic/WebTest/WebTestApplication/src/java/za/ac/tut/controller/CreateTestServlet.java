@@ -6,9 +6,6 @@
 package za.ac.tut.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
-import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -41,8 +38,6 @@ public class CreateTestServlet extends HttpServlet {
         mfl.create(m);
         
         //
-        request.setAttribute("q", q);
-        request.setAttribute("ans", ans);
 
         RequestDispatcher disp = request.getRequestDispatcher("./teacher/creating_test_outcome.jsp");
         disp.forward(request, response);

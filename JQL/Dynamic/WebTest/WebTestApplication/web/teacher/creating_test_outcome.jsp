@@ -1,6 +1,6 @@
 <%
-    String q = (String)request.getParameter("q");
-    String ans = (String)request.getParameter("ans");
+    //String q = (String)request.getAttribute("q");
+    //String ans = (String)request.getAttribute("ans");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -12,7 +12,6 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <p>Question <em><%=q%> with answer <b><%=ans%></b></em> has been created</p>
         <ul>
             <li>Click <a href="./teacher/create_test.jsp">here</a> to Add another question to the test</li>
             <li>Click <a href="./teacher/teacher_menu.jsp">here</a> to go to the Teacher's menu</li>

@@ -14,7 +14,7 @@
     <body>
         <h1>Creating a Test</h1>
         <p>Enter both the question and answer for the question</p>
-        <form action="./CreateTestServlet.do" method="POST">
+        <form action="../CreateTestServlet.do" method="POST">
             <table>
                 <thead>
                     <tr>
