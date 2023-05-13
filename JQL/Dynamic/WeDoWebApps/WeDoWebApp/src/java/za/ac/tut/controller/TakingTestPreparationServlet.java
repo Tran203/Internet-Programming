@@ -37,16 +37,20 @@ public class TakingTestPreparationServlet extends HttpServlet {
         
         //find the test prepared by a specific teacher
         Teacher testData = tfl.find(lectureID);
+        //record the number of questions in the test
+        Integer cnt = tfl.count();
+        Integer numQuestion =1;
         
         //pass back to the student
-        request.setAttribute("testData", testData);
-        
         //record std details for future purposes
         session.setAttribute("stdNo", stdNo);
         session.setAttribute("name", name);
+        session.setAttribute("testData", testData);
+        session.setAttribute("cnt", cnt);
+        session.setAttribute("numQuestion", numQuestion);
      
         
-        RequestDispatcher disp = request.getRequestDispatcher("test.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("std_details_confirm.jsp");
         disp.forward(request, response);
     }
 }
