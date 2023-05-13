@@ -1,8 +1,7 @@
-<%-- 
-    Document   : creating_test_outcome
-    Created on : 12 May 2023, 12:40:03 AM
-    Author     : Student
---%>
+<%
+    String q = (String)request.getParameter("q");
+    String ans = (String)request.getParameter("ans");
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +12,11 @@
     </head>
     <body>
         <h1>Hello World!</h1>
-        <p>Questions has been created <br>click <a href="index.html">here</a> to go to homepage.</p>
+        <p>Question <em><%=q%> with answer <b><%=ans%></b></em> has been created</p>
+        <ul>
+            <li>Click <a href="./teacher/create_test.jsp">here</a> to Add another question to the test</li>
+            <li>Click <a href="./teacher/teacher_menu.jsp">here</a> to go to the Teacher's menu</li>
+            <li>Click <a href="index.html">here</a> to go to Homepage</li>
+        </ul>
     </body>
 </html>

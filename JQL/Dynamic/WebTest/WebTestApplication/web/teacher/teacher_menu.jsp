@@ -15,7 +15,7 @@
         <h1>Hello Teacher</h1>
         <p></p>
         <ul>
-            <li>Click <a href="create_test.jsp">here</a> to create a multiple choice test</li>
+            <li>Click <a href="./teacher/create_test.jsp">here</a> to create a multiple choice test</li>
         </ul>
     </body>
 </html>

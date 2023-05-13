@@ -36,8 +36,8 @@
             <caption>Test Taken Information</caption>
             <thead>
                 <tr>
-                    <td>Q.Number</td>
-                    <td>Question Asked</td>
+                    <td>No.</td>
+                    <td>Question</td>
                     <td>Your Answer</td>
                     <td>Actual Answer</td>
                     <td>Outcome</td>
