@@ -6,7 +6,6 @@
 package za.ac.tut.entities;
 
 import java.io.Serializable;
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -17,24 +16,36 @@ import javax.persistence.Id;
  * @author Student
  */
 @Entity
-public class Memo implements Serializable {
+public class StudentWork implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @Column(name="QUESTION", nullable=false, length=50)
+    private Integer qNum;
     private String question;
-    @Column(name="ANSWER", nullable=false, length=50)
+    private String userAnswer;
     private String answer;
+    private String result;
 
-    public Memo() {
+    public StudentWork() {
     }
 
-    public Memo(Long id, String question, String answer) {
+    public StudentWork(Long id, Integer qNum, String question, String userAnswer, String answer, String result) {
         this.id = id;
+        this.qNum = qNum;
         this.question = question;
+        this.userAnswer = userAnswer;
         this.answer = answer;
+        this.result = result;
+    }
+
+    public Integer getqNum() {
+        return qNum;
+    }
+
+    public void setqNum(Integer qNum) {
+        this.qNum = qNum;
     }
 
     public String getQuestion() {
@@ -45,6 +56,14 @@ public class Memo implements Serializable {
         this.question = question;
     }
 
+    public String getUserAnswer() {
+        return userAnswer;
+    }
+
+    public void setUserAnswer(String userAnswer) {
+        this.userAnswer = userAnswer;
+    }
+
     public String getAnswer() {
         return answer;
     }
@@ -52,8 +71,20 @@ public class Memo implements Serializable {
     public void setAnswer(String answer) {
         this.answer = answer;
     }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+   
+
+   
     
-    
+
 
     public Long getId() {
         return id;
@@ -73,10 +104,10 @@ public class Memo implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Memo)) {
+        if (!(object instanceof StudentWork)) {
             return false;
         }
-        Memo other = (Memo) object;
+        StudentWork other = (StudentWork) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -85,7 +116,7 @@ public class Memo implements Serializable {
 
     @Override
     public String toString() {
-        return "za.ac.tut.entities.Memo[ id=" + id + " ]";
+        return "za.ac.tut.entities.StudentWork[ id=" + id + " ]";
     }
     
 }

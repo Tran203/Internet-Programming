@@ -6,51 +6,52 @@
 package za.ac.tut.entities;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 /**
  *
  * @author Student
  */
 @Entity
-public class Memo implements Serializable {
+public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name="STUDENT_NR")
     private Long id;
-    @Column(name="QUESTION", nullable=false, length=50)
-    private String question;
-    @Column(name="ANSWER", nullable=false, length=50)
-    private String answer;
+    private String name;
+    @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
+    private List<StudentWork> stdData = new ArrayList<>();
 
-    public Memo() {
+    public Student() {
     }
 
-    public Memo(Long id, String question, String answer) {
+    public Student(Long id, String name) {
         this.id = id;
-        this.question = question;
-        this.answer = answer;
+        this.name = name;
     }
 
-    public String getQuestion() {
-        return question;
+    public String getName() {
+        return name;
     }
 
-    public void setQuestion(String question) {
-        this.question = question;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getAnswer() {
-        return answer;
+    public List<StudentWork> getStdData() {
+        return stdData;
     }
 
-    public void setAnswer(String answer) {
-        this.answer = answer;
+    public void setStdData(List<StudentWork> stdData) {
+        this.stdData = stdData;
     }
     
     
@@ -73,10 +74,10 @@ public class Memo implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Memo)) {
+        if (!(object instanceof Student)) {
             return false;
         }
-        Memo other = (Memo) object;
+        Student other = (Student) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -85,7 +86,7 @@ public class Memo implements Serializable {
 
     @Override
     public String toString() {
-        return "za.ac.tut.entities.Memo[ id=" + id + " ]";
+        return "za.ac.tut.entities.Student[ id=" + id + " ]";
     }
     
 }
