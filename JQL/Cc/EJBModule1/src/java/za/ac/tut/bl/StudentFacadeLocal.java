@@ -27,6 +27,10 @@ public interface StudentFacadeLocal {
     List<Student> findAll();
 
     List<Student> findRange(int[] range);
+    
+    List<Student> stdWhoPassed();
+    
+    Student higestStd();
 
     int count();
     
