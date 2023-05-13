@@ -23,10 +23,6 @@ import za.ac.tut.entities.Memo;
  * @author Student
  */
 public class QuestionPreparationServlet extends HttpServlet {
-
-    @EJB
-    private MemoFacadeLocal mfl;
-
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -35,8 +31,7 @@ public class QuestionPreparationServlet extends HttpServlet {
 
         //get memo Data
         List<Memo> memo = (List<Memo>) session.getAttribute("memo");
-
-        Integer numQuestions = (Integer) session.getAttribute("numQuestions");
+        
         Integer cnt = (Integer) session.getAttribute("cnt");
 
         //get the question
@@ -48,7 +43,7 @@ public class QuestionPreparationServlet extends HttpServlet {
         session.setAttribute("question", question);
 
         //request
-        RequestDispatcher disp = request.getRequestDispatcher("question.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("./student/question.jsp");
         disp.forward(request, response);
     }
 }

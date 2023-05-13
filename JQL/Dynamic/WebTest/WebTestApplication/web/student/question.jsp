@@ -14,7 +14,7 @@
         <form action="./CheckAnswerServlet.do" method="POST">
             <table>
                 <tr>
-                    <td>Question 1</td>
+                    <td>Question </td>
                     <td><%=question%></td>
                 </tr>
                 <tr>

@@ -48,7 +48,7 @@ public class CheckAnswerServlet extends HttpServlet {
 
         //get memo Data
         List<Memo> memo = (List<Memo>) session.getAttribute("memo");
-        String correctAnswer = memo.get(cnt).getAnswer();
+        String correctAnswer = memo.get(cnt-1).getAnswer();
 
         //mark user
         String result = "Wrong";
@@ -67,16 +67,17 @@ public class CheckAnswerServlet extends HttpServlet {
         session.setAttribute("numCorrect", numCorrect);
         session.setAttribute("numWrong", numWrong);
         session.setAttribute("stdWork", stdWork);
-
+        
+        request.setAttribute("correctAnswer", correctAnswer);
         request.setAttribute("userAnswer", userAnswer);
         request.setAttribute("result", result);
 
         //navigation
         if (numQuestions == cnt) {
-            RequestDispatcher disp = request.getRequestDispatcher("outcome2.jsp");
+            RequestDispatcher disp = request.getRequestDispatcher("./student/outcome2.jsp");
             disp.forward(request, response);
         } else {
-            RequestDispatcher disp = request.getRequestDispatcher("ouctome.jsp");
+            RequestDispatcher disp = request.getRequestDispatcher("./student/ouctome.jsp");
             disp.forward(request, response);
         }
     }
