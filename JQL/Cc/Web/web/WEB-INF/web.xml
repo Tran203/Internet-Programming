@@ -24,6 +24,10 @@
         <servlet-name>RecordStdDataServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.RecordStdDataServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetPassedStudents</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetPassedStudents</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateTestServlet</servlet-name>
         <url-pattern>/CreateTestServlet.do</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>RecordStdDataServlet</servlet-name>
         <url-pattern>/RecordStdDataServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetPassedStudents</servlet-name>
+        <url-pattern>/GetPassedStudents.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

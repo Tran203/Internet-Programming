@@ -16,6 +16,8 @@
         <p></p>
         <ul>
             <li>Click <a href="create_test.jsp">here</a> to create a multiple choice test</li>
+            <li>Click <a href="./GetPassedStudents.do">here</a> to view a list of students who passed</li>
+            <li>Click <a href="./GetHighestStudent.do">here</a> to view the Student who got the Highest Mark</li>
         </ul>
     </body>
 </html>
