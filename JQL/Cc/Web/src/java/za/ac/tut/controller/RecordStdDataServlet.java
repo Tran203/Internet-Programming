@@ -6,7 +6,6 @@
 package za.ac.tut.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -36,22 +35,24 @@ public class RecordStdDataServlet extends HttpServlet {
         Long stdNo = (Long)session.getAttribute("stdNo");
         String name = (String)session.getAttribute("name");
         List<StudentWork> stdWork = (List<StudentWork>) session.getAttribute("stdWork");
+        Double mark = (Double)session.getAttribute("mark");
         
         //create std
-        Student std = createStd(stdNo,name,stdWork);
+        Student std = createStd(stdNo,name,stdWork,mark);
         sfl.create(std);
 
         RequestDispatcher disp = request.getRequestDispatcher("./student/student_menu.jsp");
         disp.forward(request, response);
     }
 
-    private Student createStd(Long stdNo, String name, List<StudentWork> stdWork) {
+    private Student createStd(Long stdNo, String name, List<StudentWork> stdWork, Double mark) {
         Student s = new Student();
         
         //set
         s.setId(stdNo);
         s.setName(name);
         s.setStdData(stdWork);
+        s.setMark(mark);
         
         return s;
     }

@@ -14,11 +14,14 @@
 
     //calculate Final Results
     Double perResult = ((double) numCorrect / numQuestions) * 100;
-    String msg = "Congratulations, You've qualify for the next round";
+    String msg = "Congratulations, You've pass the test";
 
-    if (perResult < 70.00) {
+    if (perResult < 50.00) {
         msg = "Sorry, You've failed the test";
     }
+    
+    //pass into session
+    session.setAttribute("mark", perResult);
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

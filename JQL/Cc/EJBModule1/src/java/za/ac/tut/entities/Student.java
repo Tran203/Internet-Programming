@@ -29,13 +29,15 @@ public class Student implements Serializable {
     private String name;
     @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
     private List<StudentWork> stdData = new ArrayList<>();
+    private Double mark;
 
     public Student() {
     }
 
-    public Student(Long id, String name) {
+    public Student(Long id, String name, Double mark) {
         this.id = id;
         this.name = name;
+        this.mark = mark;
     }
 
     public String getName() {
@@ -53,6 +55,16 @@ public class Student implements Serializable {
     public void setStdData(List<StudentWork> stdData) {
         this.stdData = stdData;
     }
+
+    public Double getMark() {
+        return mark;
+    }
+
+    public void setMark(Double mark) {
+        this.mark = mark;
+    }
+
+    
     
     
 
