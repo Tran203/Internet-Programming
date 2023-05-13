@@ -6,7 +6,6 @@
 package za.ac.tut.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
@@ -32,6 +31,7 @@ public class TestPreparationServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        //session
         HttpSession session = request.getSession(true);
         
         //lets prepare the test for the std

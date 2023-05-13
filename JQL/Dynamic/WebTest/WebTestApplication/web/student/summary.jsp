@@ -81,6 +81,6 @@
             </tr>
         </table>
             
-            <p>Click <a href="RecordStdDataServlet.do">here</a> to go to student menu</p>
+            <p>Click <a href="./RecordStdDataServlet.do">here</a> to go to student menu</p>
     </body>
 </html>

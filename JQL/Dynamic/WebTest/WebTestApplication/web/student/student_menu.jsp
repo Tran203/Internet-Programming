@@ -15,7 +15,7 @@
         <h1>Hello Student</h1>
         <p></p>
         <ul>
-            <li>Click <a href="TestPreparationServlet.do">here</a> to take a test</li>
+            <li>Click <a href="./TestPreparationServlet.do">here</a> to take a test</li>
         </ul>
     </body>
 </html>

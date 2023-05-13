@@ -17,7 +17,7 @@
     <body>
         <h1>Outcome</h1>
         <p>See outcome below</p>
-        <form action="QuestionPreparationServlet.do" method="POST">
+        <form action="./QuestionPreparationServlet.do" method="POST">
             <table>
                 <tr>
                     <td>Result</td>

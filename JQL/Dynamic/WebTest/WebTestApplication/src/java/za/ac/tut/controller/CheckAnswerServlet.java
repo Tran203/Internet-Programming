@@ -6,17 +6,13 @@
 package za.ac.tut.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
-import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.ac.tut.bl.StudentWorkFacadeLocal;
 import za.ac.tut.entities.Memo;
 import za.ac.tut.entities.StudentWork;
 
@@ -25,8 +21,6 @@ import za.ac.tut.entities.StudentWork;
  * @author Student
  */
 public class CheckAnswerServlet extends HttpServlet {
-    @EJB
-    private StudentWorkFacadeLocal swl;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
