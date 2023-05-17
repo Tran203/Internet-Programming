@@ -5,9 +5,11 @@
  */
 package za.ac.tut.bl;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import za.ac.tut.entities.Account;
 
 /**
@@ -27,6 +29,16 @@ public class AccountFacade extends AbstractFacade<Account> implements AccountFac
 
     public AccountFacade() {
         super(Account.class);
+    }
+
+    @Override
+    public List<Account> findUsingBalance(Double balance) {
+        //query
+        Query query = em.createQuery("SELECT A FROM ACCOUNT A "+ " WHERE A.BALANCE >= :TargetAmt ");
+        query.setParameter("TargetAmt", balance);
+        List<Account> list = query.getResultList();
+        
+        return list;
     }
     
 }

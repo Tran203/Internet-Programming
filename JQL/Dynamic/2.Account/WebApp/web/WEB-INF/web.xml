@@ -12,6 +12,10 @@
         <servlet-name>DisplayAccountsServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.DisplayAccountsServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchAccountsUsingBalance</servlet-name>
+        <servlet-class>za.ac.tut.controller.SearchAccountsUsingBalance</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccountServlet</servlet-name>
         <url-pattern>/CreateAccountServlet.do</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>DisplayAccountsServlet</servlet-name>
         <url-pattern>/DisplayAccountsServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAccountsUsingBalance</servlet-name>
+        <url-pattern>/SearchAccountsUsingBalance.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -27,6 +27,8 @@ public interface AccountFacadeLocal {
     List<Account> findAll();
 
     List<Account> findRange(int[] range);
+    
+    List<Account> findUsingBalance(Double balance);
 
     int count();
     
