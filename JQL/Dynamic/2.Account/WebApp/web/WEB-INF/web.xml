@@ -4,9 +4,17 @@
         <servlet-name>CreateAccountServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.CreateAccountServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchAccount</servlet-name>
+        <servlet-class>za.ac.tut.controller.SearchAccount</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>CreateAccountServlet</servlet-name>
         <url-pattern>/CreateAccountServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchAccount</servlet-name>
+        <url-pattern>/SearchAccount.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
