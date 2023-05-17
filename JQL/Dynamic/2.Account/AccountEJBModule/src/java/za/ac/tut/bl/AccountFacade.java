@@ -34,7 +34,7 @@ public class AccountFacade extends AbstractFacade<Account> implements AccountFac
     @Override
     public List<Account> findUsingBalance(Double balance) {
         //query
-        Query query = em.createQuery("SELECT A FROM ACCOUNT A "+ " WHERE A.BALANCE >= :TargetAmt ");
+        Query query = em.createQuery("SELECT A FROM Account A WHERE A.balance >= :TargetAmt");
         query.setParameter("TargetAmt", balance);
         List<Account> list = query.getResultList();
         
