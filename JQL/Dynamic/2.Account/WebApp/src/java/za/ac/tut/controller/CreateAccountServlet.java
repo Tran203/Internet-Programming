@@ -50,7 +50,7 @@ public class CreateAccountServlet extends HttpServlet {
         afl.create(account);
 
         //request
-        RequestDispatcher disp = request.getRequestDispatcher("./admin/create_acount_outcome.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("./admin/create_account_outcome.jsp");
         disp.forward(request, response);
     }
 

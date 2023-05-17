@@ -36,7 +36,7 @@ public class SearchAccount extends HttpServlet {
         request.setAttribute("account", account);
 
         //request
-        RequestDispatcher disp = request.getRequestDispatcher("./admin/create_acount_outcome.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("./admin/search_account_outcome.jsp");
         disp.forward(request, response);
     }
 }
