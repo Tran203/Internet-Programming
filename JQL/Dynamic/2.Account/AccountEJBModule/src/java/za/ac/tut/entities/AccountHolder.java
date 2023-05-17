@@ -10,6 +10,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -26,6 +27,7 @@ public class AccountHolder implements Serializable {
     private String surname;
     private String gender;
     private Integer age;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date dateOfBirth;
     private String status;
 

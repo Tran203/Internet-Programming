@@ -15,6 +15,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -29,6 +30,7 @@ public class Account implements Serializable {
     private Long id;
     private String accountType;
     private Double balance;
+    @Temporal(javax.persistence.TemporalType.DATE)
     private Date creationDate;
     @OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
     @JoinColumn(name="holder_fk")
