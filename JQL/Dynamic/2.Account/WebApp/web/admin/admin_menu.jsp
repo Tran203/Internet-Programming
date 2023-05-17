@@ -17,7 +17,7 @@
         <ul>
             <li>Click <a href="create_account.jsp">here</a> to create an account</li>
             <li>Click <a href="search_account.jsp">here</a> to Search for an account</li>
-            <li>Click <a href="DisplayAccountsServlet.do">here</a> to display all the accounts</li>
+            <li>Click <a href="../DisplayAccountsServlet.do">here</a> to display all the accounts</li>
         </ul>
     </body>
 </html>

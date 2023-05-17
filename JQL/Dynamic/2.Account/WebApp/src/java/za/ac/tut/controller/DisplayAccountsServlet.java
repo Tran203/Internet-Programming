@@ -25,11 +25,9 @@ public class DisplayAccountsServlet extends HttpServlet {
     private AccountFacadeLocal afl;
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //get account num
-        Long id = Long.parseLong(request.getParameter("id"));
-
+        //get the list
         List<Account> list = afl.findAll();
 
         request.setAttribute("list", list);

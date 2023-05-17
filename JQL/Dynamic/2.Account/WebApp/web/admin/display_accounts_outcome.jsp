@@ -19,29 +19,28 @@
                 <caption>Accounts Details</caption>
                 <thead>
                     <tr>
-                        <td>Acc No.</td>
-                        <td>Type</td>
-                        <td>Balance</td>
+                        <td>Acc Number.</td>
                         <td>Holder Id.</td>
-                        <td>Holder Name</td>
-                        <td>Holder Surname</td>
+                        <td>Account Type</td>
+                        <td>Balance</td>
+                        
                     </tr>
                 </thead>
+                <tbody>
                 <%
                     for (int i = 0; i < list.size(); i++) {
                         Account acc = list.get(i);
                 %>
                 <tr>
                     <td><%=acc.getId()%></td>
+                    <td><%=acc.getAccountHlder().getId()%></td>
                     <td><%=acc.getAccountType()%></td>
                     <td>R<%=acc.getBalance()%></td>
-                    <td><%=acc.getAccountHlder().getId()%></td>
-                    <td><%=acc.getAccountHlder().getName()%></td>
-                    <td><%=acc.getAccountHlder().getSurname()%></td>
                 </tr>
                 <%
                     }
                 %>
+                </tbody>
             </table>
             <table>
                 <tr>
