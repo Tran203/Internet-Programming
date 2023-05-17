@@ -14,7 +14,7 @@
     <body>
         <h1>Create Account</h1>
         <p>Fill in the form to create a account</p>
-        <form action="./CreateAccountServlet.do" method="POST">
+        <form action="../CreateAccountServlet.do" method="POST">
             <table>
                 <caption>Account Holder Details</caption>
                 <tr>
@@ -74,7 +74,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="submit" name="Create Account"></td>
+                    <td><input type="submit" value="Create Account"></td>
                 </tr>
             </table>
         </form>
