@@ -1,3 +1,4 @@
+<%@page import="za.ac.tut.entities.Student"%>
 <%
     Student std =(Student)request.getAttribute("std");
 %>

@@ -34,18 +34,19 @@ public class StudentFacade extends AbstractFacade<Student> implements StudentFac
     @Override
     public List<Student> stdWhoPassed() {
         //query
-        Query query = em.createQuery("SELECT s FROM STUDENT S WHERE S.MARK >= 50.0");
+        Query query = em.createQuery("SELECT S FROM Student S WHERE S.mark >= 50.0");
         List<Student> students = query.getResultList();
-        
+
         return students;
     }
 
     @Override
     public Student higestStd() {
         //QUERY
-        Query query = em.createQuery("SELECT s FROM STUDENT s " + " WHERE s.MARK = (SELECT MAX(s.MARK) FROM STUDENT s)");
-        Student std = (Student)query.getSingleResult();
+        Query query = em.createQuery("SELECT S FROM Student S "
+                + " WHERE S.mark = (SELECT MAX(S.mark) FROM Student S)");
+        Student std = (Student) query.getSingleResult();
         return std;
     }
-    
+
 }
