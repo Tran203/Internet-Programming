@@ -14,7 +14,7 @@
     <body>
         <h1>Create Account</h1>
         <p>Fill in the form to create a account</p>
-        <form>
+        <form action="./CreateAccountServlet.do" method="POST">
             <table>
                 <caption>Account Holder Details</caption>
                 <tr>
@@ -56,10 +56,11 @@
                     </td>
                 </tr>
             </table>
+            <br>
             <table>
                 <caption>Account Details</caption>
                 <tr>
-                    <td></td>
+                    <td>Account Type:</td>
                     <td>
                         <select name="type">
                             <option>Savings</option>
