@@ -7,11 +7,13 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.util.Date;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import za.ac.tut.bl.AccountFacadeLocal;
 import za.ac.tut.entities.Account;
 import za.ac.tut.entities.AccountHolder;
 
@@ -20,7 +22,8 @@ import za.ac.tut.entities.AccountHolder;
  * @author Student
  */
 public class CreateAccountServlet extends HttpServlet {
-
+    @EJB
+    private  AccountFacadeLocal afl;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -39,10 +42,12 @@ public class CreateAccountServlet extends HttpServlet {
     //create
     AccountHolder accountHlder = createHolder(id,name,surname,gender,age,dateOfBirth,status);
     Account account = createAccount(accountType,balance,accountHlder);
+    
+    //insert into database
+    afl.create(account);
 
     //request
-    RequestDispatcher disp = request.getRequestDispatcher("");
-
+    RequestDispatcher disp = request.getRequestDispatcher("./admin/create_acount_outcome.jsp");
     disp.forward (request, response);
 }
 
@@ -61,6 +66,13 @@ public class CreateAccountServlet extends HttpServlet {
     }
 
     private Account createAccount(String accountType, Double balance, AccountHolder accountHlder) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Account a = new Account();
+        //set
+        a.setAccountType(accountType);
+        a.setBalance(balance);
+        a.setCreationDate(new Date());
+        a.setAccountHlder(accountHlder);
+        
+        return a;
     }
 }
