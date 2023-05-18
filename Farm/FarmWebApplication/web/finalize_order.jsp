@@ -3,6 +3,7 @@
 <%
     //get cart info
     List<Items> cart = (List<Items>) session.getAttribute("cart");
+    Double totalOrderAmt = (Double)session.getAttribute("totalOrderAmt");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -56,6 +57,9 @@
         </table>
 
         <br>
+        
+        <p>Total Order price is R<%=totalOrderAmt%></p>
+            
 
         <form action="ConfirmOrderServlet.do" method="POST">
             <caption>Address Information</caption>
@@ -74,7 +78,7 @@
                 </tr>
                 <tr>
                     <td></td>
-                    <td><input type="text" value="Confirm Order"></td>
+                    <td><input type="submit" value="Confirm Order"></td>
                 </tr>
             </table>
         </form>

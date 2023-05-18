@@ -37,7 +37,7 @@ public class ConfirmOrderServlet extends HttpServlet {
 
         //GET ADDRESS
         String street = request.getParameter("street");
-        String area = request.getParameter("aarea");
+        String area = request.getParameter("area");
         String code = request.getParameter("code");
 
         //get cart info
@@ -69,6 +69,7 @@ public class ConfirmOrderServlet extends HttpServlet {
         Order o = new Order();
         
         //set
+        o.setCreationDate(new Date());
         o.setTotAmt(totalOrderAmt);
         o.setAddress(address);
         o.setItem(cart);

@@ -16,7 +16,7 @@
         <p>
             your item has been added in the cart.
         </p> <p>
-            Please click <a href="customer.jsp"> HERE </a> to add another item or 
+            Please click <a href="GetItemsServlet2.do"> HERE </a> to add another item or 
             <a href="finalize_order.jsp">HERE </a> to finalize order.
         </p>
     </body>
