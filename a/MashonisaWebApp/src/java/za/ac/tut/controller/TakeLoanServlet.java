@@ -6,7 +6,6 @@
 package za.ac.tut.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -32,8 +31,8 @@ public class TakeLoanServlet extends HttpServlet {
         HttpSession  session = request.getSession(true);
         
         String incomeType = (String)request.getParameter("incomeType");
-        double loanAmnt = Double.parseDouble(request.getParameter("loanAmnt"));
-        String incomeAmt = (String)request.getParameter("incomeAmt");
+        Double loanAmnt = Double.parseDouble(request.getParameter("loanAmnt"));
+        Double incomeAmt = Double.parseDouble(request.getParameter("incomeAmt"));
         String bankAcc = (String)request.getParameter("bankAcc");
         Long accNo = Long.parseLong(request.getParameter("accNo"));
         String loanTerm = (String)request.getParameter("loanTerm");
@@ -59,15 +58,15 @@ public class TakeLoanServlet extends HttpServlet {
    
     }
 
-    private Client editLoanApplication(String incomeType, double loanAmnt, String incomeAmt, String bankAcc, Long accNo, String loanTerm, String status, Long id) {
+    private Client editLoanApplication(String incomeType, double loanAmnt, Double incomeAmt, String bankAcc, Long accNo, String loanTerm, String status, Long id) {
         //find client
         Client c = client.find(id);
-       Loan_application application = new Loan_application();
+       Loan_application application = c.getApplication();
        
        //set
        application.setAccNo(accNo);
        application.setBankAcc(bankAcc);
-       application.setIncomeAmt(loanAmnt);
+       application.setIncomeAmt(incomeAmt);
        application.setIncomeType(incomeType);
        application.setLoanAmnt(loanAmnt);
        application.setLoanTerm(loanTerm);

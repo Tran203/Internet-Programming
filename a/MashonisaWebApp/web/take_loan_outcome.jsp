@@ -1,5 +1,5 @@
 <%
-    double loanAmnt = (double) request.getAttribute("loanAmnt");
+    Double loanAmnt = (Double) request.getAttribute("loanAmnt");
     String loanTerm = (String) request.getAttribute("loanTerm");
 %>
 

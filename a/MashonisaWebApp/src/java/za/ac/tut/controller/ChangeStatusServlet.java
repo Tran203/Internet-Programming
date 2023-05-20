@@ -32,7 +32,7 @@ public class ChangeStatusServlet extends HttpServlet {
 
         //get client id
         Long id = Long.parseLong(request.getParameter("clientId"));
-        String status = request.getParameter("status");
+        String status = request.getParameter("response");
 
         if (status.equalsIgnoreCase("Accept") || status.equalsIgnoreCase("Reject")) {
             //find the client
@@ -40,18 +40,24 @@ public class ChangeStatusServlet extends HttpServlet {
             //update database
             client.edit(client1);
             
+            String name = client.find(id).getName();
+            String surname = client.find(id).getSurname();
+            
+
             //pass 
             request.setAttribute("status", status);
-            request.setAttribute("name", client1.getName());
-            request.setAttribute("surname", client1.getSurname());
+            request.setAttribute("name", name);
+            request.setAttribute("surname", surname);
 
             //go to outcome
             RequestDispatcher disp = request.getRequestDispatcher("status_change.jsp");
             disp.forward(request, response);
+        } else {
+            //go to menu
+            RequestDispatcher disp = request.getRequestDispatcher("adminMenu.jsp");
+            disp.forward(request, response);
         }
-        //go to menu
-        RequestDispatcher disp = request.getRequestDispatcher("adminMenu.jsp");
-        disp.forward(request, response);
+
     }
 
     private Client editStatus(Long id, String status) {
