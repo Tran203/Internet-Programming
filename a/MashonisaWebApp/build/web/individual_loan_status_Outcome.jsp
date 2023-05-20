@@ -18,19 +18,25 @@
                 <caption>Client Information</caption>
                 <tr>
                     <td>Name</td>
+                    <td><input type="text" ></td>
                     <td>Surname</td>
+                    <td><input type="text"></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
+                    <td><input type="text"></td>
                     <td>Age</td>
+                    <td><input type="text"></td>
                 </tr>
                 <tr>
                     <td>Cell No</td>
+                    <td><input type="text"></td>
                     <td>Source of Income</td>
+                    <td><input type="text"></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td></td>
+                    <td><input type="text"></td>
                 </tr>
             </table>
 
@@ -40,18 +46,23 @@
                 <caption>Client Requested Loan Application</caption>
                 <tr>
                     <td>Pay Frequency</td>
-                    <td>Income R</td>
+                    <td><input type="text" value="<%=client1.getApplication().getIncomeType()%>" readonly></td>
+                    <td>Income Amount</td>
+                    <td><input type="text" value="<%=client1.getApplication().getIncomeAmt()%>" readonly></td>
                 </tr>
                 <tr>
                     <td>Amount Requested</td>
+                    <td><input type="text" value="<%=client1.getApplication().getLoanAmnt()%>" readonly></td>
                     <td>Loan Term</td>
+                    <td><input type="text" value="<%=client1.getApplication().getLoanTerm()%>" readonly></td>
                 </tr>     
             </table>
 
             <br>
             <table>
-                <caption>Respond to Client</caption>
+                <caption>Respond to Client's Application</caption>
                 <tr>
+                    <td></td>
                     <td>Your response</td>
                     <td>
                         <select name="response">
@@ -60,9 +71,12 @@
                             <option>Reject</option>
                         </select>
                     </td>
+                    <td></td>
                 </tr>
                 <tr>
                     <td></td>
+                    <td></td>
+                    <input type="hidden" name="clientId" value="<%=client1.getId()%>">
                     <td><input type="submit" value="Save"></td>
                 </tr>
             </table>
