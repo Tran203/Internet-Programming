@@ -34,9 +34,10 @@ public class SearchOrderUsingRange extends HttpServlet {
         //serch
         List<Order_Info> list = ofl.findOrdersUsingRange(min, max);
         
+        request.setAttribute("list", list);
         
         //request
-        RequestDispatcher disp = request.getRequestDispatcher("order_info_outcome.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("search_using_range_outcome.jsp");
         disp.forward(request, response);
     }
 }
