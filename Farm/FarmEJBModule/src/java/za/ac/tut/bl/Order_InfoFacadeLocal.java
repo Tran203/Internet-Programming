@@ -7,26 +7,26 @@ package za.ac.tut.bl;
 
 import java.util.List;
 import javax.ejb.Local;
-import za.ac.tut.entities.Order;
+import za.ac.tut.entities.Order_Info;
 
 /**
  *
  * @author Student
  */
 @Local
-public interface OrderFacadeLocal {
+public interface Order_InfoFacadeLocal {
 
-    void create(Order order);
+    void create(Order_Info order_Info);
 
-    void edit(Order order);
+    void edit(Order_Info order_Info);
 
-    void remove(Order order);
+    void remove(Order_Info order_Info);
 
-    Order find(Object id);
+    Order_Info find(Object id);
 
-    List<Order> findAll();
+    List<Order_Info> findAll();
 
-    List<Order> findRange(int[] range);
+    List<Order_Info> findRange(int[] range);
 
     int count();
     

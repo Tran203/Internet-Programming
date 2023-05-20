@@ -8,14 +8,14 @@ package za.ac.tut.bl;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import za.ac.tut.entities.Order;
+import za.ac.tut.entities.Order_Info;
 
 /**
  *
  * @author Student
  */
 @Stateless
-public class OrderFacade extends AbstractFacade<Order> implements OrderFacadeLocal {
+public class Order_InfoFacade extends AbstractFacade<Order_Info> implements Order_InfoFacadeLocal {
 
     @PersistenceContext(unitName = "FarmEJBModulePU")
     private EntityManager em;
@@ -25,8 +25,8 @@ public class OrderFacade extends AbstractFacade<Order> implements OrderFacadeLoc
         return em;
     }
 
-    public OrderFacade() {
-        super(Order.class);
+    public Order_InfoFacade() {
+        super(Order_Info.class);
     }
     
 }

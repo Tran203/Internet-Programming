@@ -25,7 +25,7 @@ import javax.persistence.Temporal;
  * @author Student
  */
 @Entity
-public class Order implements Serializable {
+public class Order_Info implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -40,15 +40,14 @@ public class Order implements Serializable {
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     private List<Items> item = new ArrayList<>();
 
-    public Order() {
+    public Order_Info() {
     }
 
-    public Order(Long id, Date creationDate, Double totAmt, Customer address, List<Items> item) {
+    public Order_Info(Long id, Date creationDate, Double totAmt, Customer address) {
         this.id = id;
         this.creationDate = creationDate;
         this.totAmt = totAmt;
         this.address = address;
-        this.item = item;
     }
 
     public Date getCreationDate() {
@@ -84,7 +83,6 @@ public class Order implements Serializable {
     }
     
     
-    
 
     public Long getId() {
         return id;
@@ -104,10 +102,10 @@ public class Order implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Order)) {
+        if (!(object instanceof Order_Info)) {
             return false;
         }
-        Order other = (Order) object;
+        Order_Info other = (Order_Info) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -116,7 +114,7 @@ public class Order implements Serializable {
 
     @Override
     public String toString() {
-        return "za.ac.tut.entities.Order[ id=" + id + " ]";
+        return "za.ac.tut.entities.Order_Info[ id=" + id + " ]";
     }
     
 }
