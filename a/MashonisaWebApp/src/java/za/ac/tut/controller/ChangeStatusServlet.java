@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import za.ac.tut.bl.ClientFacadeLocal;
+import za.ac.tut.bl.Loan_applicationFacadeLocal;
 import za.ac.tut.entities.Client;
 import za.ac.tut.entities.Loan_application;
 
@@ -25,7 +26,7 @@ public class ChangeStatusServlet extends HttpServlet {
 
     @EJB
     private ClientFacadeLocal client;
-
+    private Loan_applicationFacadeLocal loan;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -63,10 +64,15 @@ public class ChangeStatusServlet extends HttpServlet {
     private Client editStatus(Long id, String status) {
         //find client
         Client c = client.find(id);
-        Loan_application application = new Loan_application();
+        Loan_application application = c.getApplication();
 
         //set status
         application.setStatus(status);
+        
+        loan.edit(application);
+        
+        //save
+       
 
         //update application
         c.setApplication(application);

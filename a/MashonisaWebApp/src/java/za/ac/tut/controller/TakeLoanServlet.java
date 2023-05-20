@@ -61,7 +61,7 @@ public class TakeLoanServlet extends HttpServlet {
     private Client editLoanApplication(String incomeType, double loanAmnt, Double incomeAmt, String bankAcc, Long accNo, String loanTerm, String status, Long id) {
         //find client
         Client c = client.find(id);
-       Loan_application application = c.getApplication();
+       Loan_application application = new Loan_application();
        
        //set
        application.setAccNo(accNo);
