@@ -22,17 +22,6 @@ import za.ac.tut.entities.Client;
  * @author Student
  */
 public class clientServlet extends HttpServlet {
-
-   
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     * 
-     */
     @EJB
     private ClientFacadeLocal client;
     @Override

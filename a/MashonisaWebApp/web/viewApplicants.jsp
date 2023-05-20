@@ -23,14 +23,14 @@
         <table>
             <thead>
                 <tr>
-                    <td>NAME</td>
-                    <td>SURNAME</td>
-                    <td>OCCUPATION</td>
-                    <td>INCOME AMOUNT</td>
-                    <td>LOAN AMOUNT</td>
-                    <td>LOAN TERM</td>
-                    <td>Status</td>
-                    <td>Action</td>
+                    <th>NAME</th>
+                    <th>SURNAME</th>
+                    <th>OCCUPATION</th>
+                    <th>INCOME AMOUNT</th>
+                    <th>LOAN AMOUNT</th>
+                    <th>LOAN TERM</th>
+                    <th>Status</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <%        for (int i = 0; i < listClient.size(); i++) {
