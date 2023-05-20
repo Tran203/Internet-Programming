@@ -50,9 +50,9 @@
              
                    <td>
                        <select name="gender">
-                           <option>male</option>
-                           <option>female</option>
-                           <option>other</option>
+                           <option>Male</option>
+                           <option>Female</option>
+                           <option>Other</option>
                        </select>
                    </td>
                </tr>

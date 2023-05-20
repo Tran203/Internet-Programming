@@ -52,6 +52,10 @@ public class registerServlet extends HttpServlet {
          Client c = createClient(id, name, surname,username, password,gender, age, cellNo, occupation,address);
          client.create(c);
          
+        //pass
+        request.setAttribute("name", name);
+        request.setAttribute("surname", surname);
+         
          RequestDispatcher disp = request.getRequestDispatcher("registerOutcome.jsp");
          disp.forward(request, response);
     }

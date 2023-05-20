@@ -1,8 +1,7 @@
-<%-- 
-    Document   : registerOutcome
-    Created on : 17 May 2023, 11:35:22 AM
-    Author     : Student
---%>
+<%
+    String name = (String)request.getAttribute("name");
+    String surname = (String)request.getAttribute("surname");
+%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -14,7 +13,7 @@
     <body>
         <h1>Successful Registration</h1>
         
-        <p>The client has been successfully registered<br> 
+        <p>The client account for <b>(<%=name%>, <%=surname%>)</b> has been successfully registered<br> 
             Please click <a href="menu.jsp">here</a> to go to the business menu page.</p>
     </body>
 </html>
