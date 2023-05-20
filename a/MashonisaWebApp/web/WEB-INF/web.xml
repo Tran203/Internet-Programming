@@ -24,6 +24,10 @@
         <servlet-name>GetIndividualLoanStatus</servlet-name>
         <servlet-class>za.ac.tut.controller.GetIndividualLoanStatus</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChangeStatusServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.ChangeStatusServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>clientServlet</servlet-name>
         <url-pattern>/clientServlet.do</url-pattern>
@@ -47,6 +51,10 @@
     <servlet-mapping>
         <servlet-name>GetIndividualLoanStatus</servlet-name>
         <url-pattern>/GetIndividualLoanStatus.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChangeStatusServlet</servlet-name>
+        <url-pattern>/ChangeStatusServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

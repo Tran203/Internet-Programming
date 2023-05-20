@@ -13,7 +13,7 @@
     <body>
         <h1>Client Loan Application Details</h1>
         <p>See the full details for client ()</p>
-        <form>
+        <form action="ChangeStatusServlet.do" method="POST">
             <table>
                 <caption>Client Information</caption>
                 <tr>
