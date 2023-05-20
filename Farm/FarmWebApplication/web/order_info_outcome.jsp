@@ -14,7 +14,11 @@
     <body>
         <h1>Hello World!</h1>
         <p>
-            Order created
+            Order created.
+            
+        </p>
+        <p>
+            Please click <a href="index.html">HERE </a> to main page.
         </p>
     </body>
 </html>

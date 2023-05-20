@@ -20,6 +20,10 @@
         <servlet-name>GetItemsServlet2</servlet-name>
         <servlet-class>za.ac.tut.web.GetItemsServlet2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SearchOrderUsingRange</servlet-name>
+        <servlet-class>za.ac.tut.web.SearchOrderUsingRange</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>AddItemsServlet</servlet-name>
         <url-pattern>/AddItemsServlet.do</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>GetItemsServlet2</servlet-name>
         <url-pattern>/GetItemsServlet2.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SearchOrderUsingRange</servlet-name>
+        <url-pattern>/SearchOrderUsingRange.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
