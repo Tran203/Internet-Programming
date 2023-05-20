@@ -64,12 +64,13 @@ public class ChangeStatusServlet extends HttpServlet {
     private Client editStatus(Long id, String status) {
         //find client
         Client c = client.find(id);
-        Loan_application application = c.getApplication();
+        Loan_application application = new Loan_application();
+        //Loan_application application = c.getApplication();
 
         //set status
         application.setStatus(status);
         
-        loan.edit(application);
+        //loan.edit(application);
         
         //save
        
