@@ -6,7 +6,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
@@ -16,11 +15,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import za.ac.tut.bl.CustomerFacadeLocal;
-import za.ac.tut.bl.OrderFacadeLocal;
+import za.ac.tut.bl.Order_InfoFacadeLocal;
 import za.ac.tut.entities.Customer;
 import za.ac.tut.entities.Items;
-import za.ac.tut.entities.Order;
+import za.ac.tut.entities.Order_Info;
 
 /**
  *
@@ -29,7 +27,7 @@ import za.ac.tut.entities.Order;
 public class ConfirmOrderServlet extends HttpServlet {
 
     @EJB
-    private OrderFacadeLocal ofl;
+    private Order_InfoFacadeLocal ofl;
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,7 +45,7 @@ public class ConfirmOrderServlet extends HttpServlet {
         //create customer or address
         Customer address = createCustomer(street, area, code);
         //create order and save into database
-        Order order = createOreder(cart,totalOrderAmt, address);
+       Order_Info order = createOreder(cart,totalOrderAmt, address);
         ofl.create(order);
 
         RequestDispatcher disp = request.getRequestDispatcher("order_info_outcome.jsp");
@@ -65,8 +63,8 @@ public class ConfirmOrderServlet extends HttpServlet {
            return c;
     }
 
-    private Order createOreder(List<Items> cart, Double totalOrderAmt, Customer address) {
-        Order o = new Order();
+    private Order_Info createOreder(List<Items> cart, Double totalOrderAmt, Customer address) {
+        Order_Info o = new Order_Info();
         
         //set
         o.setCreationDate(new Date());

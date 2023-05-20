@@ -20,11 +20,15 @@
             <table border="1">
                
                 <tbody>
-                  
+                     <tr>
+                        <td>Item Code:</td>
+                        <td><input type="text" name="code"></td>
+                    </tr>
                      <tr>
                         <td>Item Description:</td>
                         <td><input type="text" name="description"></td>
-                    </tr> <tr>
+                    </tr> 
+                    <tr>
                         <td>Item Unit Price:</td>
                         <td><input type="text" name="unitPrice"></td>
                     </tr>

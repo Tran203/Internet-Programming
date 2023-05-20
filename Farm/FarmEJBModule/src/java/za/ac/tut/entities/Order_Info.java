@@ -16,6 +16,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
@@ -37,6 +38,7 @@ public class Order_Info implements Serializable {
     private Double totAmt;
     @OneToOne(fetch=FetchType.LAZY, cascade=CascadeType.PERSIST)
     private Customer address;
+    @JoinColumn(name="item_fk")
     @OneToMany(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
     private List<Items> item = new ArrayList<>();
 

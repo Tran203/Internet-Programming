@@ -6,7 +6,6 @@
 package za.ac.tut.web;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Date;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -29,13 +28,13 @@ public class AddItemsServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-         
+         String code = request.getParameter("code");
         String description = request.getParameter("description");
         Double unitPrice = Double.parseDouble(request.getParameter("unitPrice"));
         Double quantity = Double.parseDouble(request.getParameter("quantity"));
         
         
-        Items item = createItems(description,unitPrice,quantity);
+        Items item = createItems(code,description,unitPrice,quantity);
         ifl.create(item);
       
         request.setAttribute("item", item);
@@ -44,9 +43,11 @@ public class AddItemsServlet extends HttpServlet {
         disp.forward(request, response);
     }
 
-    private Items createItems(String description, Double unitPrice, Double quantity) {
+    private Items createItems(String code,String description, Double unitPrice, Double quantity) {
          
        Items items = new Items();
+       
+       items.setCode(code);
        items.setDescription(description);
        items.setUnitPrice(unitPrice);
        items.setQuantity(quantity);
