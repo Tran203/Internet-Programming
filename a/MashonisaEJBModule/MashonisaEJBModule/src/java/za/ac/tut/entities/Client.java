@@ -44,18 +44,18 @@ public class Client implements Serializable {
     public Client() {
     }
 
-    public Client(Long id, String name,String age, String surname, String username, String password, String gender, String cellNo, String occupation, String address, Loan_application application) {
+    public Client(Long id, String name, String surname, String username, String password, String gender, String age, String cellNo, String occupation, String address, Loan_application application) {
         this.id = id;
         this.name = name;
         this.surname = surname;
         this.username = username;
         this.password = password;
         this.gender = gender;
+        this.age = age;
         this.cellNo = cellNo;
         this.occupation = occupation;
         this.address = address;
         this.application = application;
-         this.age = age;
     }
 
     public String getName() {
@@ -98,6 +98,14 @@ public class Client implements Serializable {
         this.gender = gender;
     }
 
+    public String getAge() {
+        return age;
+    }
+
+    public void setAge(String age) {
+        this.age = age;
+    }
+
     public String getCellNo() {
         return cellNo;
     }
@@ -130,13 +138,6 @@ public class Client implements Serializable {
         this.application = application;
     }
 
-    public String getAge() {
-        return age;
-    }
-
-    public void setAge(String age) {
-        this.age = age;
-    }
     
     
     

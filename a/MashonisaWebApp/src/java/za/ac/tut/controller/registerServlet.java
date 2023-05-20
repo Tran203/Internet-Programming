@@ -49,14 +49,14 @@ public class registerServlet extends HttpServlet {
          String occupation = request.getParameter("occupation");
          String address = request.getParameter("address");
          
-         Client c = createClient(id,name, surname,age, username,  password, gender, cellNo,occupation, address);
+         Client c = createClient(id, name, surname,username, password,gender, age, cellNo, occupation,address);
          client.create(c);
          
          RequestDispatcher disp = request.getRequestDispatcher("registerOutcome.jsp");
          disp.forward(request, response);
     }
 
-    private Client createClient(Long id,String age, String name, String surname, String username, String password, String gender, String cellNo, String occupation, String address) {
+    private Client createClient(Long id, String name, String surname, String username, String password, String gender, String age, String cellNo, String occupation, String address) {
        Client c = new Client();
        Loan_application application = new Loan_application();
        
@@ -74,8 +74,6 @@ public class registerServlet extends HttpServlet {
        c.setOccupation(occupation);
        c.setAddress(address);
        c.setApplication(application);
-       
-       
        
        
        return c;

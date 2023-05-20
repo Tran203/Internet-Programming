@@ -36,13 +36,13 @@
 
             %>
             <tr>
-                    <td><%=client1.getName()%></td>
-                    <td><%=client1.getSurname()%></td>
-                    <td><%=client1.getOccupation()%></td>
-                    <td><%=client1.getApplication().getIncomeAmt()%></td>
-                    <td><%=client1.getApplication().getLoanAmnt()%></td>
-                    <td><%=client1.getApplication().getLoanTerm()%></td>
-                </tr>
+                <td><%=client1.getName()%></td>
+                <td><%=client1.getSurname()%></td>
+                <td><%=client1.getOccupation()%></td>
+                <td><%=client1.getApplication().getIncomeAmt()%></td>
+                <td><%=client1.getApplication().getLoanAmnt()%></td>
+                <td><%=client1.getApplication().getLoanTerm()%></td>
+            </tr>
             <%                }
             %>
         </table>
