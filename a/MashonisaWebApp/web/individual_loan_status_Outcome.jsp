@@ -1,6 +1,6 @@
 <%@page import="za.ac.tut.entities.Client"%>
 <%
-    Client client1 =(Client)session.getAttribute("client");
+    Client client1 = (Client) session.getAttribute("client");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -11,7 +11,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Client Details</h1>
+        <h1>Client Loan Application Details</h1>
         <p>See the full details for client ()</p>
         <form>
             <table>
@@ -33,11 +33,38 @@
                     <td></td>
                 </tr>
             </table>
-            
+
             <br>
-            
+
             <table>
                 <caption>Client Requested Loan Application</caption>
+                <tr>
+                    <td>Pay Frequency</td>
+                    <td>Income R</td>
+                </tr>
+                <tr>
+                    <td>Amount Requested</td>
+                    <td>Loan Term</td>
+                </tr>     
+            </table>
+
+            <br>
+            <table>
+                <caption>Respond to Client</caption>
+                <tr>
+                    <td>Your response</td>
+                    <td>
+                        <select name="response">
+                            <option>No Response</option>
+                            <option>Accept</option>
+                            <option>Reject</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="submit" value="Save"></td>
+                </tr>
             </table>
         </form>
     </body>
