@@ -20,6 +20,10 @@
         <servlet-name>viewApplicantServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.viewApplicantServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>GetIndividualLoanStatus</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetIndividualLoanStatus</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>clientServlet</servlet-name>
         <url-pattern>/clientServlet.do</url-pattern>
@@ -39,6 +43,10 @@
     <servlet-mapping>
         <servlet-name>viewApplicantServlet</servlet-name>
         <url-pattern>/viewApplicantServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetIndividualLoanStatus</servlet-name>
+        <url-pattern>/GetIndividualLoanStatus.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

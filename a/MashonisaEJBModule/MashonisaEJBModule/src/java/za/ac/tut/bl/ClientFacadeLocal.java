@@ -27,6 +27,8 @@ public interface ClientFacadeLocal {
     List<Client> findAll();
 
     List<Client> findRange(int[] range);
+    
+    List<Client> viewApplicants();
 
     int count();
     

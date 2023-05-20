@@ -42,8 +42,8 @@
                 <tr>
                     <td>Bank account type :</td>
                     <td><select name="bankAcc">
-                            <option>savings</option>
-                            <option>cheaque</option>
+                            <option>Savings</option>
+                            <option>Cheque</option>
                             <option>Debit</option>
                         </select></td>
                 </tr>
@@ -54,9 +54,9 @@
                 <tr>
                     <td>For how long are you willing to pay the loan :</td>
                     <td><select name="loanTerm">
-                            <option>less a month</option>
-                            <option>2 months</option>
-                            <option>3 months</option>
+                            <option>less a Month</option>
+                            <option>2 Months</option>
+                            <option>3 Months</option>
                         </select></td>
                 </tr>
                 <tr>

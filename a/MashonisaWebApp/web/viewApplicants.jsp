@@ -14,7 +14,7 @@
         <title>Application Page</title>
     </head>
     <body>
-        <h1>Loan Application</h1>
+        <h1>Loan Applicants</h1>
         <%
             List<Client> listClient = (List<Client>) request.getAttribute("listClient");
 
@@ -23,17 +23,21 @@
         <table>
             <thead>
                 <tr>
-                    <td>NAME:</td>
-                    <td>SURNAME:</td>
-                    <td>OCCUPATION:</td>
-                    <td>INCOME AMOUNT:</td>
-                    <td>LOAN AMOUNT:</td>
-                    <td>LOAN TERM:</td>
+                    <td>NAME</td>
+                    <td>SURNAME</td>
+                    <td>OCCUPATION</td>
+                    <td>INCOME AMOUNT</td>
+                    <td>LOAN AMOUNT</td>
+                    <td>LOAN TERM</td>
+                    <td>Status</td>
+                    <td>Action</td>
                 </tr>
             </thead>
-            <%                for (int i = 0; i < listClient.size(); i++) {
+            <%        for (int i = 0; i < listClient.size(); i++) {
                     Client client1 = listClient.get(i);
-
+                    if (client1.getApplication().getIncomeAmt() == null) {
+                        continue;
+                    }
             %>
             <tr>
                 <td><%=client1.getName()%></td>
@@ -42,10 +46,19 @@
                 <td><%=client1.getApplication().getIncomeAmt()%></td>
                 <td><%=client1.getApplication().getLoanAmnt()%></td>
                 <td><%=client1.getApplication().getLoanTerm()%></td>
+                <td><%=client1.getApplication().getStatus()%></td>
+                <td>
+                    <form action="GetIndividualLoanStatus.do" method="post">
+                        <input type="hidden" name="clientId" value="<%=client1.getId()%>">
+                        <button type="submit">Change Status</button>
+                    </form>
+                </td>
             </tr>
-            <%                }
+            <%
+                }
             %>
         </table>
+
 
     </p>
 </body>
