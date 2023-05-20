@@ -49,8 +49,11 @@ public class TakeLoanServlet extends HttpServlet {
         client1 = editLoanApplication(incomeType,loanAmnt,incomeAmt,bankAcc,accNo,loanTerm,status,id);
         client.edit(client1);
         
+        //request
+        request.setAttribute("loanAmnt", loanAmnt);
+        request.setAttribute("loanTerm", loanTerm);
         
-        RequestDispatcher disp = request.getRequestDispatcher("adminMenu.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("take_loan_outcome.jsp");
         disp.forward(request, response);
         
    

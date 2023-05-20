@@ -40,7 +40,7 @@
 
             if (status.equalsIgnoreCase("PENDING")) {
                 msg = "your requested amount is R" + amount;
-            } else if (status.equalsIgnoreCase("Approved")) {
+            } else if (status.equalsIgnoreCase("Accept")) {
                 msg = "you are owing R" + amount;
             }
         %>
