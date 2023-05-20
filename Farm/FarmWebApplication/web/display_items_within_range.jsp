@@ -18,11 +18,11 @@
             <table>
                 <tr>
                     <td>Minimum Amount:</td>
-                    <td><input type="text" name="min"></td>
+                    <td><input type="number" name="min" min="0"></td>
                 </tr>
                 <tr>
                     <td>Maximum Amount:</td>
-                    <td><input type="text" name="max"></td>
+                    <td><input type="number" name="max" min="0"></td>
                 </tr>
                 <tr>
                     <td></td>

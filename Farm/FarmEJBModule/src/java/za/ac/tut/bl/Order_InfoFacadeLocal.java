@@ -27,6 +27,8 @@ public interface Order_InfoFacadeLocal {
     List<Order_Info> findAll();
 
     List<Order_Info> findRange(int[] range);
+    
+    List<Order_Info> findOrdersUsingRange(Integer min, Integer max);
 
     int count();
     
