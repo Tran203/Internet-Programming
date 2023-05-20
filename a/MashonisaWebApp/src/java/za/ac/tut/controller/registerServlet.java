@@ -64,12 +64,12 @@ public class registerServlet extends HttpServlet {
        application.setStatus("NONE");
        
        c.setId(id);
-       c.setAge(age);
        c.setName(name);
        c.setSurname(surname);
        c.setUsername(username);
        c.setPassword(password);
        c.setGender(gender);
+       c.setAge(age);
        c.setCellNo(cellNo);
        c.setOccupation(occupation);
        c.setAddress(address);

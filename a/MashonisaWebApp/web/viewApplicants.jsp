@@ -37,11 +37,11 @@
             %>
             <tr>
                     <td><%=client1.getName()%></td>
-                    <td>SURNAME:</td>
-                    <td>OCCUPATION:</td>
-                    <td>INCOME AMOUNT:</td>
-                    <td>LOAN AMOUNT:</td>
-                    <td>LOAN TERM:</td>
+                    <td><%=client1.getSurname()%></td>
+                    <td><%=client1.getOccupation()%></td>
+                    <td><%=client1.getApplication().getIncomeAmt()%></td>
+                    <td><%=client1.getApplication().getLoanAmnt()%></td>
+                    <td><%=client1.getApplication().getLoanTerm()%></td>
                 </tr>
             <%                }
             %>
