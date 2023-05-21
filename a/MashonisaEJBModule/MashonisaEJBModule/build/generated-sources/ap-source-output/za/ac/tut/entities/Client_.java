@@ -5,7 +5,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import za.ac.tut.entities.Loan_application;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2023-05-21T11:22:22")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2023-05-21T12:59:14")
 @StaticMetamodel(Client.class)
 public class Client_ { 
 

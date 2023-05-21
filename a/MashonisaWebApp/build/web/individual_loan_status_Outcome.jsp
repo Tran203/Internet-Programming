@@ -18,25 +18,25 @@
                 <caption>Client Information</caption>
                 <tr>
                     <td>Name</td>
-                    <td><input type="text" ></td>
+                    <td><input type="text" value="<%=client1.getName()%>" readonly></td>
                     <td>Surname</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getSurname()%>" readonly></td>
                 </tr>
                 <tr>
                     <td>Gender</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getGender()%>" readonly></td>
                     <td>Age</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getAge()%>" readonly></td>
                 </tr>
                 <tr>
                     <td>Cell No</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getCellNo()%>" readonly></td>
                     <td>Source of Income</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getOccupation()%>" readonly></td>
                 </tr>
                 <tr>
                     <td>Address</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" value="<%=client1.getAddress()%>" readonly></td>
                 </tr>
             </table>
 

@@ -42,13 +42,13 @@
             if (status.equalsIgnoreCase("PENDING")) {
                 msg = "your requested amount is R" + amount;
             } else if (status.equalsIgnoreCase("Accept")) {
-                msg = "you are owing R" + amount;
+                msg = "you are currently owing R" + amount;
             }
         %>
 
         <p>
             Hi <b><%= name %></b>, <%=id%> your loan status is <b><%= status %></b> <b><%= msg %></b>. <br><br>
-            <% if (status.equalsIgnoreCase("Approved")) { %>
+            <% if (status.equalsIgnoreCase("Accept")) { %>
                 <table>
                     <tr>
                         <th>Phone</th>

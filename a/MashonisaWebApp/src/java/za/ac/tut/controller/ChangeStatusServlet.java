@@ -27,6 +27,7 @@ public class ChangeStatusServlet extends HttpServlet {
     @EJB
     private ClientFacadeLocal client;
     private Loan_applicationFacadeLocal loan;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -37,13 +38,15 @@ public class ChangeStatusServlet extends HttpServlet {
 
         if (status.equalsIgnoreCase("Accept") || status.equalsIgnoreCase("Reject")) {
             //find the client
-            Client client1 = editStatus(id, status);
+            //Client client1 = editStatus(id, status);
             //update database
-           // client.edit(client1);
-            
+            //client.edit(client1);
+
+            Client c = editLoanApplication(id, status);
+            client.create(c);
+
             String name = client.find(id).getName();
             String surname = client.find(id).getSurname();
-            
 
             //pass 
             request.setAttribute("status", status);
@@ -64,25 +67,85 @@ public class ChangeStatusServlet extends HttpServlet {
     private Client editStatus(Long id, String status) {
         //find client
         Client c = client.find(id);
-        Loan_application application = new Loan_application();
-        //Loan_application application = c.getApplication();
-        Client  c2 = c; 
-        //delete
-        client.remove(c);
-        
+        //Loan_application application = new Loan_application();
+        Loan_application application = c.getApplication();
+
         //set status
         application.setStatus(status);
-        
-        //loan.edit(application);
-        
+
+        loan.edit(application);
+
         //save
-       
-
         //update application
-        c2.setApplication(application);
-        
-        client.create(c2);
+        c.setApplication(application);
 
+        return c;
+    }
+
+    private Client editLoanApplication(Long id, String status) {
+        //find client
+        Client c = client.find(id);
+        Loan_application application = new Loan_application();
+
+        //DELETE CLIENT
+        Client d = c;
+        c = removeC(id);
+        client.remove(c);
+
+        //
+        Long id_num = d.getId();
+        String name = d.getName();
+        String surname = d.getSurname();
+        String username = d.getUsername();
+        String password = d.getPassword();
+        String gender = d.getGender();
+        String cellNo = d.getCellNo();
+        String age = d.getAge();
+        String occupation = d.getOccupation();
+        String address = d.getAddress();
+
+        Long accNo = d.getApplication().getAccNo();
+        String bankAcc = d.getApplication().getBankAcc();
+        Double incomeAmt = d.getApplication().getIncomeAmt();
+        String incomeType = d.getApplication().getIncomeType();
+        Double loanAmnt = d.getApplication().getLoanAmnt();
+        String loanTerm = d.getApplication().getLoanTerm();
+
+        //set
+        application.setAccNo(accNo);
+        application.setBankAcc(bankAcc);
+        application.setIncomeAmt(incomeAmt);
+        application.setIncomeType(incomeType);
+        application.setLoanAmnt(loanAmnt);
+        application.setLoanTerm(loanTerm);
+        application.setStatus(status);
+
+        //set
+        d.setId(id_num);
+        d.setName(name);
+        d.setSurname(surname);
+        d.setUsername(username);
+        d.setPassword(password);
+        d.setGender(gender);
+        d.setAge(age);
+        d.setCellNo(cellNo);
+        d.setOccupation(occupation);
+        d.setAddress(address);
+
+        // loan.edit(application);
+        //update
+        d.setApplication(application);
+
+        return d;
+    }
+
+    private Client removeC(Long id) {
+        Client c = new Client();
+        //remove loan
+        
+        
+        c.setId(id);
+        
         return c;
     }
 }
