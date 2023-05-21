@@ -35,7 +35,7 @@
             String name = client1.getName();
             double amount = client1.getApplication().getLoanAmnt();
             String status = client1.getApplication().getStatus();
-            
+
             //calc loan information
             Double interest = 0.30;
             Double monthlyPay = 0.00;
@@ -56,8 +56,7 @@
         %>
 
         <p>
-            <%                
-                if (status.equalsIgnoreCase("Approved")) {
+            <%                if (status.equalsIgnoreCase("Approved")) {
             %>
         <p>Hi <b><%= name%></b>, Your loan application was <b><%= status%></b>, you're currently owing <b>R<%=amt%></b></p>
         <table>
@@ -81,15 +80,15 @@
                 <td><input type="text" value="<%=numOfPayments%>" readonly></td>
             </tr> 
         </table>
-        <% } else if (status.equalsIgnoreCase("Rejected")) {
+        <% } else if (status.equalsIgnoreCase("None")) {
         %>
-        <p>Hi <b><%= name%></b>, your loan application was  <b><%= status%></b></p>
+        <p>Hi <b><%= name%></b>, You currently don't have a <b>active</b> loan application</p>
         <%
         } else if (status.equalsIgnoreCase("PENDING")) {
         %><p>Hi <b><%= name%></b>, your loan status is <b><%= status%></b>.</p>
         <%} else {
         %>
-        <p>Hi <b><%= name%></b>, You currently don't have a <b>active</b> loan application</p>
+        <p>Hi <b><%= name%></b>, your loan application was  <b><%= status%></b></p>
         <%
             }
         %>
