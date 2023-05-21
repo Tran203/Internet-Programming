@@ -114,7 +114,18 @@ public class TakeLoanServlet extends HttpServlet {
 
     private Client removeC(Long id) {
         Client c = new Client();
+        //remove loan
+        
+        
         c.setId(id);
+        
         return c;
     }
+
+    private Loan_application removeA(Long a) {
+        Loan_application app = new Loan_application();
+        app.setId(a);
+        
+        return app;
+      }
 }
