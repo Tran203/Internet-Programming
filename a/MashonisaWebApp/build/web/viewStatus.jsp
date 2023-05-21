@@ -35,16 +35,7 @@
             String name = client1.getName();
             double amount = client1.getApplication().getLoanAmnt();
             String status = client1.getApplication().getStatus();
-            Long id = client1.getApplication().getId();
-
-            String msg = "";
-
-            if (status.equalsIgnoreCase("PENDING")) {
-                msg = "your requested amount is R" + amount;
-            } else if (status.equalsIgnoreCase("Accept")) {
-                msg = "you are currently owing R" + amount;
-            }
-
+            
             //calc loan information
             Double interest = 0.30;
             Double monthlyPay = 0.00;
@@ -65,8 +56,10 @@
         %>
 
         <p>
-            Hi <b><%= name%></b>, <%=id%> your loan status is <b><%= status%></b> <b><%= msg%></b>. <br><br>
-            <% if (status.equalsIgnoreCase("Accept")) {%>
+            <%                
+                if (status.equalsIgnoreCase("Approved")) {
+            %>
+        <p>Hi <b><%= name%></b>, Your loan application was <b><%= status%></b>, you're currently owing <b>R<%=amt%></b></p>
         <table>
             <caption>Your Loan Information</caption>
             <tr>
@@ -79,7 +72,7 @@
                 <td>Total Loan Amount</td>
                 <td><input type="text" value="<%=amt%>" readonly></td>
                 <td>Interest Rate</td>
-                <td><input type="text" value="<%=interest*100%>" readonly></td>
+                <td><input type="text" value="<%=interest * 100%>" readonly></td>
             </tr>
             <tr>
                 <td>Amount To Pay(*Monthly)</td>
@@ -88,7 +81,18 @@
                 <td><input type="text" value="<%=numOfPayments%>" readonly></td>
             </tr> 
         </table>
-        <% }%>
+        <% } else if (status.equalsIgnoreCase("Rejected")) {
+        %>
+        <p>Hi <b><%= name%></b>, your loan application was  <b><%= status%></b></p>
+        <%
+        } else if (status.equalsIgnoreCase("PENDING")) {
+        %><p>Hi <b><%= name%></b>, your loan status is <b><%= status%></b>.</p>
+        <%} else {
+        %>
+        <p>Hi <b><%= name%></b>, You currently don't have a <b>active</b> loan application</p>
+        <%
+            }
+        %>
         Please click <a href="Clientmenu.jsp">here</a> to go back to the menu.
     </p>
 </body>

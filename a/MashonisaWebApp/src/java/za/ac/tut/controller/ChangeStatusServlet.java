@@ -34,13 +34,14 @@ public class ChangeStatusServlet extends HttpServlet {
 
         //get client id
         Long id = Long.parseLong(request.getParameter("clientId"));
-        String status = request.getParameter("response");
+        String msg = request.getParameter("response");
 
-        if (status.equalsIgnoreCase("Accept") || status.equalsIgnoreCase("Reject")) {
-            //find the client
-            //Client client1 = editStatus(id, status);
-            //update database
-            //client.edit(client1);
+        if (msg.equalsIgnoreCase("Accept") || msg.equalsIgnoreCase("Reject")) {
+            String status = "Approved";
+            
+            if(msg.equalsIgnoreCase("Reject")){
+                status = "Rejected";
+            }
 
             Client c = editLoanApplication(id, status);
             client.create(c);
