@@ -92,7 +92,8 @@
         <%
             }
         %>
-        Please click <a href="Clientmenu.jsp">here</a> to go back to the menu.
+        Please click <a href="Clientmenu.jsp">here</a> to go back to the menu. <br>
+        Please click <a href="menu.jsp">here</a> to go to the business menu page.
     </p>
 </body>
 </html>

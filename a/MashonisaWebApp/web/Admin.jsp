@@ -19,7 +19,7 @@
         </p>     
         <ul>
             <li>Click <a href="viewApplicantServlet.do"/>here</a>To view a list of applicants</li>
-            <li>Click <a href="outstanding.jsp"/>here</a>To view people with outstanding balance</li>
+            <li>Click <a href="ViewOutstandingClientsServlet.do"/>here</a>To view people with outstanding balance</li>
              <li>Click <a href="delete.jsp"/>here</a>To delete people who are not owing in the database</li>
         </ul>
     </body>

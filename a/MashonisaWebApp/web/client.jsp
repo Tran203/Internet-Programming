@@ -19,19 +19,16 @@
        <form action="clientServlet.do" method="POST">
            <table>
                <tr>
-                   <td>Username :</td>
-                   <td><input type="text" name="username"></td>
+                   <td>ID number :</td>
+                   <td><input type="text" name="id" required></td>
                </tr>
                
                <tr>
                    <td>Password :</td>
-                   <td><input type="text" name="password"></td>
+                   <td><input type="password" name="password" required></td>
                </tr>
                
-                <tr>
-                   <td>ID number :</td>
-                   <td><input type="text" name="id"></td>
-               </tr>
+                
                
                <tr>
                    <td></td>

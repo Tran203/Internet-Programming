@@ -74,6 +74,8 @@
                 }
             %>
         </table>
+        Click <a href="Admin.jsp"/>here</a> to go the admin menu <br>
+        Please click <a href="menu.jsp">here</a> to go to the business menu page.
 
 
     </p>

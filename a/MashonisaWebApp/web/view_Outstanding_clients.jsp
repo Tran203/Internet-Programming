@@ -51,7 +51,7 @@
             </thead>
             <%        for (int i = 0; i < listClient.size(); i++) {
                     Client client1 = listClient.get(i);
-                    if (client1.getApplication().getIncomeAmt() == null) {
+                    if (!client1.getApplication().getStatus().equalsIgnoreCase("Approved")) {
                         continue;
                     }
             %>
@@ -74,8 +74,6 @@
                 }
             %>
         </table>
-        Click <a href="Admin.jsp"/>here</a> to go the admin menu <br>
-        Please click <a href="menu.jsp">here</a> to go to the business menu page.
 
 
     </p>

@@ -28,6 +28,10 @@
         <servlet-name>ChangeStatusServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.ChangeStatusServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ViewOutstandingClientsServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.ViewOutstandingClientsServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>clientServlet</servlet-name>
         <url-pattern>/clientServlet.do</url-pattern>
@@ -55,6 +59,10 @@
     <servlet-mapping>
         <servlet-name>ChangeStatusServlet</servlet-name>
         <url-pattern>/ChangeStatusServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ViewOutstandingClientsServlet</servlet-name>
+        <url-pattern>/ViewOutstandingClientsServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
