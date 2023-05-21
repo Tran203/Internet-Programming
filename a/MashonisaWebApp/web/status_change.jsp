@@ -13,6 +13,9 @@
     </head>
     <body>
         <h1>Status Change</h1>
-        <p>The loan application status of <b>(<%=name%>, <%=surname%>)</b> was change to <b><%=status%></b> </p>
+        <p>
+            The loan application status of <b>(<%=name%>, <%=surname%>)</b> was change to <b><%=status%></b> <br>
+            Click <a href="Admin.jsp"/>here</a> to go the admin menu
+        </p>
     </body>
 </html>

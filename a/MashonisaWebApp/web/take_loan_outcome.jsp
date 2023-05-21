@@ -15,8 +15,7 @@
         <p>You have made a loan application worth R<%=loanAmnt%> to be paid in <%=loanTerm%> time</p>
 
         <ul>
-            <li>Click <a href="viewStatus.jsp"/>here</a>To view your loan status</li>
-            <li>Please click <a href="Clientmenu.jsp">here</a> to go to the business menu page.</li>
+            <li>Please click <a href="menu.jsp">here</a> to go to the business menu page.</li>
         </ul>
     </body>
 </html>
