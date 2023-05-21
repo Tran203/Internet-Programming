@@ -26,62 +26,95 @@ public class TakeLoanServlet extends HttpServlet {
 
     @EJB
     private ClientFacadeLocal client;
-    
+
     private Loan_applicationFacadeLocal loan;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession  session = request.getSession(true);
-        
-        String incomeType = (String)request.getParameter("incomeType");
+        HttpSession session = request.getSession(true);
+
+        String incomeType = (String) request.getParameter("incomeType");
         Double loanAmnt = Double.parseDouble(request.getParameter("loanAmnt"));
         Double incomeAmt = Double.parseDouble(request.getParameter("incomeAmt"));
-        String bankAcc = (String)request.getParameter("bankAcc");
+        String bankAcc = (String) request.getParameter("bankAcc");
         Long accNo = Long.parseLong(request.getParameter("accNo"));
-        String loanTerm = (String)request.getParameter("loanTerm");
-        
-        
+        String loanTerm = (String) request.getParameter("loanTerm");
+
         String status = "Pending";
-        
+
         //get our client information
-        Client client1 =(Client)session.getAttribute("client");
+        Client client1 = (Client) session.getAttribute("client");
         Long id = client1.getId();
-        
+
         //edit client
-        client1 = editLoanApplication(incomeType,loanAmnt,incomeAmt,bankAcc,accNo,loanTerm,status,id);
-        client.edit(client1);
+        client1 = editLoanApplication(incomeType, loanAmnt, incomeAmt, bankAcc, accNo, loanTerm, status, id);
+        //client.edit(client1);
+        client.create(client1);
+
         
         //request
         request.setAttribute("loanAmnt", loanAmnt);
         request.setAttribute("loanTerm", loanTerm);
-        
+
         RequestDispatcher disp = request.getRequestDispatcher("take_loan_outcome.jsp");
         disp.forward(request, response);
-        
-   
+
     }
 
     private Client editLoanApplication(String incomeType, double loanAmnt, Double incomeAmt, String bankAcc, Long accNo, String loanTerm, String status, Long id) {
         //find client
         Client c = client.find(id);
-       Loan_application application = new Loan_application();
-       //Loan_application application = c.getApplication();
-       
-       //set
-       application.setAccNo(accNo);
-       application.setBankAcc(bankAcc);
-       application.setIncomeAmt(incomeAmt);
-       application.setIncomeType(incomeType);
-       application.setLoanAmnt(loanAmnt);
-       application.setLoanTerm(loanTerm);
-       application.setStatus(status);
-       
-       
-       loan.edit(application);
-       
-       //update
-       c.setApplication(application);
-       
-       return c;
+        Loan_application application = new Loan_application();
+        
+        //DELETE CLIENT
+        Client d = c;
+        c = removeC(id);
+        client.remove(c);
+
+        //
+        Long id_num = d.getId();
+        String name = d.getName();
+        String surname = d.getSurname();
+        String username = d.getUsername();
+        String password = d.getPassword();
+        String gender = d.getGender();
+        String cellNo = d.getCellNo();
+        String age = d.getAge();
+        String occupation = d.getOccupation();
+        String address = d.getAddress();
+        
+        //set
+        application.setAccNo(accNo);
+        application.setBankAcc(bankAcc);
+        application.setIncomeAmt(incomeAmt);
+        application.setIncomeType(incomeType);
+        application.setLoanAmnt(loanAmnt);
+        application.setLoanTerm(loanTerm);
+        application.setStatus(status);
+
+        //set
+        d.setId(id_num);
+        d.setName(name);
+        d.setSurname(surname);
+        d.setUsername(username);
+        d.setPassword(password);
+        d.setGender(gender);
+        d.setAge(age);
+        d.setCellNo(cellNo);
+        d.setOccupation(occupation);
+        d.setAddress(address);
+
+        // loan.edit(application);
+        //update
+        d.setApplication(application);
+
+        return d;
+    }
+
+    private Client removeC(Long id) {
+        Client c = new Client();
+        c.setId(id);
+        return c;
     }
 }

@@ -35,6 +35,7 @@
             String name = client1.getName();
             double amount = client1.getApplication().getLoanAmnt();
             String status = client1.getApplication().getStatus();
+            Long id = client1.getApplication().getId();
 
             String msg = "";
 
@@ -46,7 +47,7 @@
         %>
 
         <p>
-            Hi <b><%= name %></b>, your loan status is <b><%= status %></b> <b><%= msg %></b>. <br><br>
+            Hi <b><%= name %></b>, <%=id%> your loan status is <b><%= status %></b> <b><%= msg %></b>. <br><br>
             <% if (status.equalsIgnoreCase("Approved")) { %>
                 <table>
                     <tr>

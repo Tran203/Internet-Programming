@@ -39,7 +39,7 @@ public class ChangeStatusServlet extends HttpServlet {
             //find the client
             Client client1 = editStatus(id, status);
             //update database
-            client.edit(client1);
+           // client.edit(client1);
             
             String name = client.find(id).getName();
             String surname = client.find(id).getSurname();
@@ -66,7 +66,10 @@ public class ChangeStatusServlet extends HttpServlet {
         Client c = client.find(id);
         Loan_application application = new Loan_application();
         //Loan_application application = c.getApplication();
-
+        Client  c2 = c; 
+        //delete
+        client.remove(c);
+        
         //set status
         application.setStatus(status);
         
@@ -76,7 +79,9 @@ public class ChangeStatusServlet extends HttpServlet {
        
 
         //update application
-        c.setApplication(application);
+        c2.setApplication(application);
+        
+        client.create(c2);
 
         return c;
     }
