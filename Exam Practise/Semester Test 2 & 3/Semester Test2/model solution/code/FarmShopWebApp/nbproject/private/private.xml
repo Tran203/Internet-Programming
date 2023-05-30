@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/AddItemToCartServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/get_orders_by_date_outcome.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/CheckoutServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/AddItemServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/buy_items.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/confirm_item_addition.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/get_orders_by_date.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/GetItemsToBuyServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/confirm_order.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/EndSessionServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/index.html</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/GetOrdersByDateServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/checkout.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/StartSessionServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/managerMenu.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/add_item_outcome.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/src/java/za/ac/tut/web/PlaceOrderServlet.java</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/add_item.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/customerMenu.jsp</file>
+            <file>file:/C:/Users/memaniv/Documents/NetBeansProjects/FarmShopWebApp/web/start.jsp</file>
+        </group>
+    </open-files>
+</project-private>
