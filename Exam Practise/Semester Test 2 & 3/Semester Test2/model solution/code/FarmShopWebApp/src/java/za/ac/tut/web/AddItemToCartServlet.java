@@ -29,14 +29,17 @@ public class AddItemToCartServlet extends HttpServlet {
         Long id = Long.parseLong(request.getParameter("id"));
         Integer qty = Integer.parseInt(request.getParameter("qty"));
         List<Item> items = (List<Item>)session.getAttribute("items");
+        //
         Integer code = getCode(items, id);
         String desc = getDescription(items, id);
         Double unitPrice = getUnitPrice(items, id);
                 
         Item item = createItem(id, code, desc, unitPrice, qty);
+        //add to cart
         CartSBLocal col = (CartSBLocal)session.getAttribute("col");
         col.addItem(item.toString());
         session.setAttribute("col", col);
+        
         String url = "confirm_item_addition.jsp";
                
         RequestDispatcher disp = request.getRequestDispatcher(url);
