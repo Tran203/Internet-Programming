@@ -7,7 +7,7 @@ import javax.persistence.metamodel.SingularAttribute;
 import javax.persistence.metamodel.StaticMetamodel;
 import za.ac.tut.entities.Address;
 
-@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2023-05-09T08:31:17")
+@Generated(value="EclipseLink-2.5.2.v20140319-rNA", date="2023-05-30T19:31:28")
 @StaticMetamodel(CustomerOrder.class)
 public class CustomerOrder_ { 
 
