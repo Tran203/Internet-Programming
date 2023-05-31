@@ -20,7 +20,7 @@
         <p>
             <ul>
                 <li>Click <a href="GetUpdatedMenuServlet.do">here</a> to buy another Item</li>
-                <li>Click <a href="manager_menu.jsp">here</a> to checkout</li>
+                <li>Click <a href="checkout.jsp">here</a> to checkout</li>
             </ul>
         </p>
     </body>
