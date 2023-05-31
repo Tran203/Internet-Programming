@@ -7,7 +7,6 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
@@ -23,32 +22,39 @@ import za.ac.tut.entities.Item;
  *
  * @author Student
  */
-public class PrepareCustomerMenuServlet extends HttpServlet {
+public class AddToCartServlet extends HttpServlet {
     @EJB
     private ItemFacadeLocal ifl;
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //session
         HttpSession session = request.getSession(true);
         
-        //create the cart
-        List<Item> items = ifl.findAll();
+        //get details
+        Long id = Long.parseLong(request.getParameter("id"));
+        Integer qty = Integer.parseInt(request.getParameter("qty"));
         
-        //prepare the cart
-        List<Item> cart = new ArrayList<>();
+        //get the item from database
+        Item item = ifl.find(id);
         
-        //prepare tot order value
-        Double tot = 0.0;
+        //calc the cost
+        Double price = item.getUnitPrice();
+        Double cost = price * qty;
+        //calc tot
+        Double tot = (Double)session.getAttribute("tot");
+        tot+= cost;
         
-        //set to session
-        session.setAttribute("items", items);
+        //add item to cart
+        List<Item> cart = (List<Item>) session.getAttribute("cart");
+        cart.add(item);
+        
+        //save changes
         session.setAttribute("cart", cart);
         session.setAttribute("tot", tot);
         
         //requst Dispatcher
-        RequestDispatcher disp = request.getRequestDispatcher("buyItems.jsp");
+        RequestDispatcher disp = request.getRequestDispatcher("buy_outcome.jsp");
         disp.forward(request, response);
     }
 }

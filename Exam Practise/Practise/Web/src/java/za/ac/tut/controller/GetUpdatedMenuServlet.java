@@ -23,12 +23,13 @@ import za.ac.tut.entities.Item;
  *
  * @author Student
  */
-public class PrepareCustomerMenuServlet extends HttpServlet {
+public class GetUpdatedMenuServlet extends HttpServlet {
+
     @EJB
     private ItemFacadeLocal ifl;
     
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         //session
         HttpSession session = request.getSession(true);
@@ -36,17 +37,9 @@ public class PrepareCustomerMenuServlet extends HttpServlet {
         //create the cart
         List<Item> items = ifl.findAll();
         
-        //prepare the cart
-        List<Item> cart = new ArrayList<>();
-        
-        //prepare tot order value
-        Double tot = 0.0;
-        
         //set to session
         session.setAttribute("items", items);
-        session.setAttribute("cart", cart);
-        session.setAttribute("tot", tot);
-        
+       
         //requst Dispatcher
         RequestDispatcher disp = request.getRequestDispatcher("buyItems.jsp");
         disp.forward(request, response);

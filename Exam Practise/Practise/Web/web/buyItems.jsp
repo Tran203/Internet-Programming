@@ -40,20 +40,22 @@
                 }
             %>
         </table>
-        <table>
-            <caption>Buy Item</caption>
-            <tr>
-                <td>ID:</td>
-                <td><input type="number" name="id"></td>
-            </tr>
-            <tr>
-                <td>Quantity:</td>
-                <td><input type="number" name="qty"></td>
-            </tr>
-            <tr>
-                <td></td>
-                <td><input type="SUBMIT" value="BUY"</td>
-            </tr>
-        </table>
+        <form action="AddToCartServlet.do" method="POST">
+            <table>
+                <caption>Buy Item</caption>
+                <tr>
+                    <td>ID:</td>
+                    <td><input type="number" name="id"></td>
+                </tr>
+                <tr>
+                    <td>Quantity:</td>
+                    <td><input type="number" name="qty"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><input type="SUBMIT" value="BUY"</td>
+                </tr>
+            </table>
+        </form>
     </body>
 </html>
