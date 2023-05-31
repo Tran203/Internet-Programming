@@ -24,6 +24,14 @@
         <servlet-name>ConfirmOrderServlet</servlet-name>
         <servlet-class>za.ac.tut.controller.ConfirmOrderServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>CustomerMenuServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.CustomerMenuServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetOrdersServlet</servlet-name>
+        <servlet-class>za.ac.tut.controller.GetOrdersServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>StartSessionServlet</servlet-name>
         <url-pattern>/StartSessionServlet.do</url-pattern>
@@ -47,6 +55,14 @@
     <servlet-mapping>
         <servlet-name>ConfirmOrderServlet</servlet-name>
         <url-pattern>/ConfirmOrderServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>CustomerMenuServlet</servlet-name>
+        <url-pattern>/CustomerMenuServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetOrdersServlet</servlet-name>
+        <url-pattern>/GetOrdersServlet.do</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

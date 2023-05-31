@@ -16,7 +16,7 @@
         <p>Please select one of the following</p>
         <ul>
             <li>Click <a href="manager_menu.jsp">here</a> to access manager menu</li>
-            <li>Click <a href="PrepareCustomerMenuServlet.do">here</a> to access customer menu</li>
+            <li>Click <a href="CustomerMenuServlet.do">here</a> to access customer menu</li>
         </ul>
     </body>
 </html>

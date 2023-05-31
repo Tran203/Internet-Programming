@@ -16,7 +16,7 @@
         <p>Please select one of the following</p>
         <ul>
             <li>Click <a href="add_item.jsp">here</a> to add Item</li>
-            <li>Click <a href="PrepareCustomerMenuServlet.do">here</a> to view orders</li>
+            <li>Click <a href="GetOrdersServlet.do">here</a> to view orders</li>
         </ul>
     </body>
 </html>

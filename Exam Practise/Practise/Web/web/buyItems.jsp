@@ -1,7 +1,7 @@
 <%@page import="java.util.List"%>
 <%@page import="za.ac.tut.entities.Item"%>
 <%
-    List<Item> items = (List<Item>) session.getAttribute("item");
+    List<Item> items = (List<Item>) session.getAttribute("items");
 %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

@@ -7,28 +7,33 @@ package za.ac.tut.controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
+import javax.ejb.EJB;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+import za.ac.tut.bl.Customer_OrderFacadeLocal;
+import za.ac.tut.entities.Customer_Order;
 
 /**
  *
  * @author Student
  */
-public class EndSessionServlet extends HttpServlet {
-@Override
+public class GetOrdersServlet extends HttpServlet {
+     @EJB
+    private Customer_OrderFacadeLocal cfl;
+    @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        //session
-        HttpSession session = request.getSession(true);
         
-        session.invalidate();
+        List<Customer_Order> list = cfl.findAll();
+        
+        request.setAttribute("list", list);
         
         //requst Dispatcher
-        RequestDispatcher disp = request.getRequestDispatcher("index.html");
+        RequestDispatcher disp = request.getRequestDispatcher("view_all.jsp");
         disp.forward(request, response);
     }
 }
