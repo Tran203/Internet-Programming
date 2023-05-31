@@ -34,7 +34,7 @@ public class Order_InfoFacade extends AbstractFacade<Order_Info> implements Orde
     @Override
     public List<Order_Info> findOrdersUsingRange(Integer min, Integer max) {
         //query
-        Query query = em.createQuery("SELECT O FROM Order_Info O WHERE totAmt >= :minTarget AND totAmt <= maxTarget");
+        Query query = em.createQuery("SELECT O FROM Order_Info O WHERE O.totAmt >=:minTarget AND O.totAmt <=:maxTarget ORDER BY O.totAmt DESC");
         //condition
         query.setParameter("minTarget", min);
         query.setParameter("maxTarget", max);
