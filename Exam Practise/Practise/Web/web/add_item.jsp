@@ -33,7 +33,7 @@
                     <td><input type="number" name="qty"></td>
                 </tr>
                 <tr>
-                    <td>Code:</td>
+                    <td></td>
                     <td><input type="SUBMIT" value="ADD"</td>
                 </tr>
             </table>

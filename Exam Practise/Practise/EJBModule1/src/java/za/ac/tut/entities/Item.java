@@ -23,17 +23,17 @@ public class Item implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String code;
-    private String desc;
+    private String description;
     private Double unitPrice;
     private Integer qty;
 
     public Item() {
     }
 
-    public Item(Long id, String code, String desc, Double unitPrice, Integer qty) {
+    public Item(Long id, String code, String description, Double unitPrice, Integer qty) {
         this.id = id;
         this.code = code;
-        this.desc = desc;
+        this.description = description;
         this.unitPrice = unitPrice;
         this.qty = qty;
     }
@@ -46,12 +46,12 @@ public class Item implements Serializable {
         this.code = code;
     }
 
-    public String getDesc() {
-        return desc;
+    public String getDescription() {
+        return description;
     }
 
-    public void setDesc(String desc) {
-        this.desc = desc;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Double getUnitPrice() {
@@ -69,7 +69,8 @@ public class Item implements Serializable {
     public void setQty(Integer qty) {
         this.qty = qty;
     }
-    
+
+   
     
 
     public Long getId() {

@@ -53,7 +53,7 @@ public class AddItemServlet extends HttpServlet {
         
         //set
         i.setCode(code);
-        i.setDesc(desc);
+        i.setDescription(desc);
         i.setUnitPrice(price);
         i.setQty(qty);
         

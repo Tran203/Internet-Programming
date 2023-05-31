@@ -17,7 +17,7 @@
         <br><br>
         <p>
             <ul>
-                <li>Click <a href="add_item.jsp">here</a> to add Item</li>
+                <li>Click <a href="add_item.jsp">here</a> to add another Item</li>
                 <li>Click <a href="manager_menu.jsp">here</a> to access manager menu</li>
                 <li>Click  <a href="menu.jsp">here</a> to return to main page.</li>
             </ul>
